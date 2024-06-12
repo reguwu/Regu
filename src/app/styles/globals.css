@@ -1,0 +1,12 @@
+html, body {
+  margin: auto;
+  max-width: 50vw;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* overflow-x: hidden; */
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
