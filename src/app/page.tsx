@@ -4,12 +4,15 @@ import Image from "next/image"
 import PorfolioList from "@/components/PortfolioList"
 import { Portfolio } from "@/models/portfolio"
 
-interface Props {
-  portfolios: Array<Portfolio>
+async function fetchPortfolio() {
+  const portfolios: Array<Portfolio> = [];
+  
+  return portfolios;
 }
 
-const HomePage: React.FC<Props> = ({ portfolios }: 
-  {portfolios: Array<Portfolio>}) => {
+const HomePage: React.FC = async () => {
+
+  const portfolios = await fetchPortfolio();
   return (
     <>
       <section id={styles["about-me-section"] }>
@@ -27,13 +30,5 @@ const HomePage: React.FC<Props> = ({ portfolios }:
     </>
   )
 }
-
-// export async function getStaticProps() {
-//   const portfolios: Array<Portfolio> = [];
-
-//   return {
-//     props: { portfolios }
-//   }
-// }
 
 export default HomePage

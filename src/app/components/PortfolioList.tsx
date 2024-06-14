@@ -7,7 +7,7 @@ interface Props {
   portfolios: Array<Portfolio>
 }
 
-const PorfolioList: React.FC<Props> = (props) => {
+const PortfolioList: React.FC<Props> = (props) => {
   return (
     <section>
         <h2>Portfolio</h2>
@@ -28,4 +28,4 @@ const PorfolioList: React.FC<Props> = (props) => {
   )
 }
 
-export default PorfolioList
+export default PortfolioList
