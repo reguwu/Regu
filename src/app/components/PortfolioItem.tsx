@@ -1,5 +1,5 @@
 import React from 'react'
-import { Portfolio } from '@/models/portfolio'
+import type { Portfolio } from '@/types'
 
 interface Props {
   portfolio: Portfolio

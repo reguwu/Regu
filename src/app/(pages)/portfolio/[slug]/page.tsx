@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 
-const Page = ({ params }: { params: { slug: string } }) => {
+const PortfolioPage = ({ params }: { params: { slug: string } }) => {
     if (params.slug !== '123') {
         notFound();
     }
@@ -8,4 +8,4 @@ const Page = ({ params }: { params: { slug: string } }) => {
     return <div>My Post: {params.slug}</div>
   }
 
-export default Page
+export default PortfolioPage
