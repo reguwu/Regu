@@ -13,7 +13,19 @@ export async function generateStaticParams() {
   return paths;
 }
 
-    return <div>My Post: {params.slug}</div>
-  }
+async function fetchPortfolioBySlug(slug: string) {
+  const path = join(process.cwd(), "src/app/data/portfolio");
+  const portfolio: MdxContent<Portfolio> = await getMdxContentByFileName<
+    MdxContent<Portfolio>
+  >(path, slug).then((portfolio) => portfolio.metadata);
 
-export default PortfolioPage
+  return portfolio;
+}
+
+const PortfolioPage = async ({ params }: { params: { slug: string } }) => {
+  const portfolio = await fetchPortfolioBySlug(params.slug);
+
+  return <div>My Post: {params.slug}</div>;
+};
+
+export default PortfolioPage;
