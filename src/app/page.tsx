@@ -23,7 +23,7 @@ const HomePage = async () => {
         <div>
           <h1 id={styles["profile-name"]}>Wuheng (Reg) Yu</h1>
           <h4 id={styles["profile-career"]}>Software Developer</h4>
-          <p id={styles["profile-desc"]}>
+          <p>
             Hello, I'm Reg. I like to explore new technologies and tinker with
             electronics. I am also passionate about art and video games.
             Tangerines are one of my favorite fruits {"\u{1F34A}"}.

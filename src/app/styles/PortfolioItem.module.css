@@ -1,0 +1,21 @@
+.portfolio-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.portfolio-item > * {
+    margin: 0;
+}
+
+.cover-image-container {
+    position: relative;
+    height: 12.5rem;
+}
+
+.cover-image {
+    border-radius: 7.5px;
+    object-fit: cover;
+}

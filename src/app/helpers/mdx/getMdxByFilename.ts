@@ -7,7 +7,7 @@ export const getMdxContentByFileName = async <T>(
   directoryPath: string,
   fileName: string
 ): Promise<MdxContent<T>> => {
-    const dir = join(directoryPath, fileName);
+    const dir = join(directoryPath, `${fileName}.mdx`);
     const file = await readFile(dir, "utf8");
 
     const { content, data } = matter(file);

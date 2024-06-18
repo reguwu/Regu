@@ -10,6 +10,7 @@ export type Portfolio = {
     category: CategoryTypes;
     techStack: Array<String>
     slug: string
+    featured: boolean
 }
 
 type CategoryTypes = 'software' | 'game'
