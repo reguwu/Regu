@@ -18,7 +18,7 @@ const Portfolio: React.FC<Props> = ({ portfolio }) => {
             src={portfolio.image}
             alt={portfolio.name}
             className={styles["cover-image"]}
-            // sizes= "(max-width: 768px) 100%"
+            sizes= "(max-width: 768px) 100%"
             fill={true}
           />
         </div>
