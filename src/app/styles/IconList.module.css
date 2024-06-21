@@ -1,0 +1,10 @@
+.icon-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.icon-list > * {
+  transform: scale(1.25);
+}

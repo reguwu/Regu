@@ -1,25 +1,24 @@
-import styles from "@styles/PortfolioList.module.css"
-import React from "react"
-import type { Portfolio } from "@/types"
-import PortfolioItem from "@/components/PortfolioItem"
+import styles from "@styles/PortfolioList.module.css";
+import React from "react";
+import type { Portfolio as PortfolioType } from "@/types";
+import Portfolio from "@/components/Portfolio";
 
 interface Props {
-  portfolios: Array<Portfolio>
+  portfolios: Array<PortfolioType>;
 }
 
-const PortfolioList: React.FC<Props> = (props) => {
+const PortfolioList: React.FC<Props> = ({ portfolios }) => {
   return (
-    <section>
-        <h2>Portfolio</h2>
-        {(props.portfolios.length ?? 0) > 0 && (
-            <div className={styles["portfolio-list"]}>
-              {props.portfolios.map((item) => {
-                return <PortfolioItem key={item.slug} {...item} />
-              })}
-            </div>
-        )}
-    </section>
-  )
-}
+    <>
+      {(portfolios.length ?? 0) > 0 && (
+        <div className={styles["portfolio-list"]}>
+          {portfolios.map((item) => 
+            <Portfolio key={item.slug} portfolio={item} />
+          )}
+        </div>
+      )}
+    </>
+  );
+};
 
-export default PortfolioList
+export default PortfolioList;

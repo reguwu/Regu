@@ -1,16 +1,15 @@
 export type Portfolio = {
-    name: string;
-    date: string;
-    image: string;
+    name: string
+    date: string
+    image: string
     link: {
-        github: string,
+        github: string
         live: string
     };
-    description: string;
-    category: CategoryTypes;
-    techStack: Array<String>
+    description: string
+    category: CategoryTypes
+    techStack: Array<string>
     slug: string
-    featured: boolean
 }
 
 type CategoryTypes = 'software' | 'game'
