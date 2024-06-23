@@ -14,4 +14,9 @@ export type Portfolio = {
 
 type CategoryTypes = 'software' | 'game'
 
+export type SearchParams = {
+    query?: string;
+    page?: string;
+}
+
 export type MdxContent<T> = { content: string; metadata: { slug: string } & T };

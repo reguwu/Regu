@@ -20,6 +20,7 @@ const Portfolio: React.FC<Props> = ({ portfolio }) => {
             className={styles["cover-image"]}
             sizes= "(max-width: 768px) 100%"
             fill={true}
+            priority={true}
           />
         </div>
       </Link>

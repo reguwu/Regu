@@ -1,22 +1,31 @@
+"use client";
+
 import styles from "@styles/PortfolioList.module.css";
-import React from "react";
-import type { Portfolio as PortfolioType } from "@/types";
 import Portfolio from "@/components/Portfolio";
+import { Search, Pagination } from "@/components/ui";
+import { Portfolio as PortfolioType } from "@/types";
+import useFilterPortfolio from "@/hooks/useFilterPortfolio";
 
 interface Props {
-  portfolios: Array<PortfolioType>;
+  query: string;
+  page: number;
+  portfolios: PortfolioType[];
 }
 
-const PortfolioList: React.FC<Props> = ({ portfolios }) => {
+const PortfolioList: React.FC<Props> = ({portfolios, query, page }) => {
+  const filteredPortfolios = useFilterPortfolio(portfolios);
+
   return (
     <>
-      {(portfolios.length ?? 0) > 0 && (
+      <Search placeholder="Search"/>
+      {(filteredPortfolios.length ?? 0) > 0 && (
         <div className={styles["portfolio-list"]}>
-          {portfolios.map((item) => 
+          {filteredPortfolios.map((item) => (
             <Portfolio key={item.slug} portfolio={item} />
-          )}
+          ))}
         </div>
       )}
+      <Pagination />
     </>
   );
 };
