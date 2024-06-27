@@ -6,6 +6,7 @@ import type { SearchParams } from "@/types";
 import type { Portfolio as PortfolioType } from "@/types";
 import { join } from "path";
 import { getMdxContent } from "@/helpers/mdx";
+import { filterPortfolio, sliceIntoChunks } from "@/helpers/portfolio";
 
 async function fetchPortfolio() {
   const path = join(process.cwd(), "src/app/data/portfolio");
@@ -16,19 +17,21 @@ async function fetchPortfolio() {
 }
 
 const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
-  const query = searchParams?.query || '';
+  const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 1;
   const portfolios = await fetchPortfolio();
+  const filteredPortfolios = filterPortfolio(portfolios, query);
+  const pagedPortfolios = sliceIntoChunks(filteredPortfolios);
 
   return (
     <>
       <section id={styles["about-me-section"]}>
         <div>
-          <h1 id={styles["profile-name"]}>Wuheng (Reg) Yu</h1>
+          <h1 id={styles["profile-name"]}>Reg Yu</h1>
           <h4 id={styles["profile-career"]}>Software Developer</h4>
           <p>
-            Hello, I&apos;m Reg. I like to explore new technologies and tinker with
-            electronics. I am also passionate about art and video games.
+            Hello, I&apos;m Reg. I like to explore new technologies and tinker
+            with electronics. I am also passionate about art and video games.
             Tangerines are one of my favorite fruits {"\u{1F34A}"}.
           </p>
         </div>
@@ -40,8 +43,12 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
       </section>
 
       <section>
-        <h1>Portfolio</h1>
-        <PorfolioList portfolios={portfolios} query={query} page={currentPage}/>
+        <h1 id="portfolio">Portfolio</h1>
+        <PorfolioList
+          portfolios={portfolios}
+          pagedPortfolios={pagedPortfolios}
+          currentPage={currentPage}
+        />
       </section>
     </>
   );
