@@ -6,6 +6,7 @@ html, body {
   margin: auto;
   max-width: 45rem;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
   /* overflow-x: hidden; */
 }
 

@@ -7,7 +7,7 @@ const Header: React.FC = () => {
         {/* <h1>Wuheng (Reg) Yu</h1> */}
         <nav id={styles["page-navbar"]}>
             <Link href="#" className={styles["page-navbar-link"]}>Home</Link>
-            <Link href="#" className={styles["page-navbar-link"]}>Resume</Link>
+            <Link href="#portfolio" className={styles["page-navbar-link"]}>Portfolio</Link>
         </nav>
     </header>
   )
