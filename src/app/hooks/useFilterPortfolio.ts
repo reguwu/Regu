@@ -1,13 +1,13 @@
 import { Portfolio } from "@/types";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState, useRef } from "react";
+import { useState } from "react";
 import { filterPortfolio } from "@/helpers/portfolio/filterPortfolio";
+import { useSkipFirstEffect } from "@/hooks/useSkipFirstEffect";
 
-const useSearchPortfolio = (portfolios: Portfolio[]) => {
+export const useFilterPortfolio = (portfolios: Portfolio[]) => {
   const searchParams = useSearchParams();
   const [filteredPortfolio, setFilteredPortfolios] =
     useState<Portfolio[]>(portfolios);
-  const mounted = useRef(true);
 
   const getFilteredPortfolio = () => {
     const query = searchParams.get("query")?.toString() || "";
@@ -18,16 +18,9 @@ const useSearchPortfolio = (portfolios: Portfolio[]) => {
     return filteredPortfolios;
   };
 
-  useEffect(() => {
-    if (mounted.current) {
-      mounted.current = false;
-      return;
-    }
-
+  useSkipFirstEffect(() => {
     setFilteredPortfolios(getFilteredPortfolio());
-  }, [searchParams]);
+  }, [searchParams.get("query")]);
 
   return filteredPortfolio;
 };
-
-export default useSearchPortfolio;

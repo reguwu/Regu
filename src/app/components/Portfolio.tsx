@@ -4,6 +4,7 @@ import styles from "@/styles/Portfolio.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import IconList from "@/components/IconList";
+import { formatDateString } from "@/helpers/date";
 
 interface Props {
   portfolio: PortfolioType;
@@ -12,7 +13,7 @@ interface Props {
 const Portfolio: React.FC<Props> = ({ portfolio }) => {
   return (
     <div className={styles["portfolio-item"]}>
-      <Link href={`/portfolio/${portfolio.slug}`}>
+      <Link href={`/portfolio/${portfolio.slug}`} className={styles["portfolio-item-link"]}>
         <div className={styles["cover-image-container"]}>
           <Image
             src={portfolio.image}
@@ -23,10 +24,15 @@ const Portfolio: React.FC<Props> = ({ portfolio }) => {
             priority={true}
           />
         </div>
+        <div className={styles["portfolio-item-content"]}>
+          <div className={styles["portfolio-item-header"]}>
+            <h3>{portfolio.name}</h3>
+            <p>{formatDateString(portfolio.date)}</p>
+          </div>
+          <IconList iconNames={portfolio.techStack} />
+          <p>{portfolio.description}</p>
+        </div>
       </Link>
-      <h3>{portfolio.name}</h3>
-      <IconList iconNames={portfolio.techStack} />
-      <p>{portfolio.description}</p>
     </div>
   );
 };

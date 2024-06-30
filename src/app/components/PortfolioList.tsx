@@ -4,10 +4,11 @@ import styles from "@styles/PortfolioList.module.css";
 import Portfolio from "@/components/Portfolio";
 import { Search, Pagination } from "@/components/ui";
 import { Portfolio as PortfolioType } from "@/types";
-import useFilterPortfolio from "@/hooks/useFilterPortfolio";
+import { useFilterPortfolio } from "@/hooks/useFilterPortfolio";
 import { sliceIntoChunks } from "@/helpers/portfolio";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { useSkipFirstEffect } from "@/hooks";
 
 interface Props {
   currentPage: number;
@@ -26,10 +27,13 @@ const PortfolioList: React.FC<Props> = ({
     useState(pagedPortfolios);
   const filteredPortfolios = useFilterPortfolio(portfolios);
 
-  useEffect(() => {
-    setCurrentPage(Number(searchParams.get("page")) || 1);
+  useSkipFirstEffect(() => {
     setPagedPortfolios(sliceIntoChunks(filteredPortfolios));
   }, [filteredPortfolios]);
+
+  useSkipFirstEffect(() => {
+    setCurrentPage(Number(searchParams.get("page")) || 1);
+  }, [searchParams.get("page")]);
 
   return (
     <>
@@ -49,6 +53,7 @@ const PortfolioList: React.FC<Props> = ({
       <Pagination
         totalPages={updatedPagedPortfolios.length}
         currentPage={updatedCurrentPage}
+        query = {searchParams.get("query") || ""}
       />
     </>
   );
