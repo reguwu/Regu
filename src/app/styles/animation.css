@@ -1,0 +1,19 @@
+@keyframes scroll-left {
+  0% {
+      transform: translateX(0%);
+  }
+
+  100% {
+      transform: translateX(calc(-50% - 0.25rem));
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+      transform: translateX(calc(-50% - 0.25rem));
+  }
+
+  100% {
+      transform: translateX(0%);
+  }
+}

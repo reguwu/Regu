@@ -1,22 +1,18 @@
-.icons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+.scrolling-icons-container {
+  padding: 1rem 0;
+  overflow: hidden;
 }
 
-.icons > * {
-  transform: scale(1.25);
-}
-
-.verbose-icons {
+.scrolling-icons {
+  width: fit-content;
   display: flex;
   flex-direction: row;
   gap: 0.50rem;
   flex-wrap: nowrap;
+  animation: var(--direction) var(--speed) linear infinite;
 }
  
-.verbose-icons > div {
+.scrolling-icons > div {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -27,8 +23,12 @@
   background-color: rgb(46, 46, 46);
 }
 
-.verbose-icons > div > span {
+.scrolling-icons > div > span {
  font-weight: 500;
  font-size: 0.85rem;
  white-space: nowrap;
+}
+
+.scrolling-icons-container:hover .scrolling-icons {
+  animation-play-state: paused;
 }

@@ -7,6 +7,8 @@ import type { Portfolio as PortfolioType } from "@/types";
 import { join } from "path";
 import { getMdxContent } from "@/helpers/mdx";
 import { filterPortfolio, sliceIntoChunks } from "@/helpers/portfolio";
+import { skillIcons } from "@/data/icon/skill-icons";
+import ScrollingIconList from "@/components/ScrollingIconList";
 
 async function fetchPortfolio() {
   const path = join(process.cwd(), "src/app/data/portfolio");
@@ -22,10 +24,11 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
   const portfolios = await fetchPortfolio();
   const filteredPortfolios = filterPortfolio(portfolios, query);
   const pagedPortfolios = sliceIntoChunks(filteredPortfolios);
+  const icons = sliceIntoChunks(skillIcons, 12);
 
   return (
     <>
-      <section id={styles["about-me-section"]}>
+      <section id={styles["about-me"]}>
         <div>
           <h1 id={styles["profile-name"]}>Reg Yu</h1>
           <h4 id={styles["profile-career"]}>Software Developer</h4>
@@ -42,13 +45,30 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
         />
       </section>
 
-      <section>
-        <h1 id="portfolio">Portfolio</h1>
+      <section id="skills">
+        <h1>Skills</h1>
+        {icons.map((icons, index) => (
+          <ScrollingIconList
+            key={index}
+            iconNames={icons}
+            direction={index % 2 === 0 ? "right" : "left"}
+            speed={120}
+          />
+        ))}
+      </section>
+
+      <section id="portfolio">
+        <h1>Portfolio</h1>
         <PorfolioList
           portfolios={portfolios}
           pagedPortfolios={pagedPortfolios}
           currentPage={currentPage}
         />
+      </section>
+
+      <section id="contact">
+        <h1>Contact</h1>
+        <p>Coming soon...</p>
       </section>
     </>
   );
