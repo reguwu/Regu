@@ -5,6 +5,12 @@ import {
   SiSpringboot,
   SiReact,
   SiNextdotjs,
+  SiFlask,
+  SiTwilio,
+  SiJira,
+  SiGradle,
+  SiDocker,
+  SiFlyway
 } from "react-icons/si";
 
 const Icon = ({ name, size }: { name: string; size: number }) => {
@@ -28,8 +34,44 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
           alt="" width={size} height={size} unoptimized={true} priority
           style={{ backgroundColor: "black", borderRadius: "20%" }}/>
       );
+    case "flask":
+      return <SiFlask color="white" size={size} />;
+    case "aws":
+      return (
+        <Image src={`/images/icons/aws.svg`}
+          alt="" width={size} height={size} unoptimized={true} priority
+          style={{ backgroundColor: "white", borderRadius: "20%" }}/>
+      );
+    case "twilio":
+      return <SiTwilio color="#ef384e" size={size} />;
+    case "github":
+      return (
+        <Image src={`/images/icons/github.svg`}
+          alt="" width={size} height={size} unoptimized={true} priority
+          style={{ backgroundColor: "white", borderRadius: "20%", outline: "2px solid black", outlineOffset: "-1px" }}/>
+      );
+    case "jira":
+      return <SiJira color="#2580f7" size={size} />;
+    case "gradle":
+      return <SiGradle color="#6cc644" size={size} />;
     case "unity":
       return <SiUnity size={size} />;
+    case "maven":
+      return (
+        <Image src={`/images/icons/maven.svg`}
+          alt="" width={size} height={size} unoptimized={true} priority
+          style={{ backgroundColor: "white", borderRadius: "20%" }}/>
+      );
+    case "docker":
+      return <SiDocker color="#2496ed" size={size} />;
+    case "flyway":
+      return <SiFlyway color="#c60000" size={size} />;
+    case "oauth":
+      return (
+        <Image src={`/images/icons/oauth.svg`}
+          alt="" width={size} height={size} unoptimized={true} priority
+          style={{ backgroundColor: "white", borderRadius: "20%" }}/>
+      );
     default:
       return (
         <Image src={`/images/icons/${name}.svg`}
