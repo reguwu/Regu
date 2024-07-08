@@ -10,6 +10,7 @@ import { filterPortfolio, sliceIntoChunks } from "@/helpers/portfolio";
 import { skillIcons } from "@/data/icon/skill-icons";
 import ScrollingIconList from "@/components/ScrollingIconList";
 import Contact from "@/components/Contact";
+import Divider from "@/components/ui/Divider";
 
 async function fetchPortfolio() {
   const path = join(process.cwd(), "src/app/data/portfolio");
@@ -44,6 +45,7 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
               Tangerines are one of my favorite fruits {"\u{1F34A}"}.
             </p>
           </div>
+          <Divider orientation="v" margin={[1.5, 1, 1.5, 1]}/>
           <Image
             className={styles["profile-pic"]}
             src={profilePic}
@@ -51,6 +53,7 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
           />
         </div>
  
+        <Divider text="Skills" orientation="h" margin={[2, 0, 2, 0]}/>
         
         {icons.map((icons, index) => (
           <ScrollingIconList

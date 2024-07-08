@@ -1,0 +1,24 @@
+.hdivider-container {
+  display: flex;
+  
+}
+.hdivider {
+  width: 100%;
+  background-color: hsl(240, 3%, 19%);
+  height: 1px;
+}
+
+.vdivider-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.vdivider {
+  background-color: hsl(240, 3%, 19%);
+  width: 1px;
+}
+
+.divider-text {
+  padding: 0 1rem;
+  align-content: center;
+}
