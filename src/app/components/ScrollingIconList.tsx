@@ -16,8 +16,8 @@ const ScrollingIconList: React.FC<Props> = ({ iconNames, direction, speed }) => 
       <div className={styles["scrolling-icons"]} 
         style={{"--direction": `scroll-${direction}`, "--speed": `${speed}s`} as React.CSSProperties}
       >
-        {duplicateIconNames.map((name) => 
-          <div key={name}>
+        {duplicateIconNames.map((name, index) => 
+          <div key={`${name}_${index}`}>
             <Icon name={name} size={40} />
             <span>{name.toUpperCase()}</span>
           </div>

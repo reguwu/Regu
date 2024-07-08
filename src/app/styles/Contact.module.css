@@ -1,0 +1,29 @@
+.contact > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact > form > input[type=text], 
+.contact > form > textarea {
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.contact > form > input[type=submit] {
+  background-color: #4377e0;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: fit-content;
+  align-self: flex-end;
+}
+
+.contact > form > input[type=submit]:hover {
+  background-color: #5889ec;
+}

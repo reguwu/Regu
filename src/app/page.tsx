@@ -9,6 +9,7 @@ import { getMdxContent } from "@/helpers/mdx";
 import { filterPortfolio, sliceIntoChunks } from "@/helpers/portfolio";
 import { skillIcons } from "@/data/icon/skill-icons";
 import ScrollingIconList from "@/components/ScrollingIconList";
+import Contact from "@/components/Contact";
 
 async function fetchPortfolio() {
   const path = join(process.cwd(), "src/app/data/portfolio");
@@ -28,25 +29,29 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
 
   return (
     <>
-      <section id={styles["about-me"]}>
-        <div>
-          <h1 id={styles["profile-name"]}>Reg Yu</h1>
-          <h4 id={styles["profile-career"]}>Software Developer</h4>
-          <p>
-            Hello, I&apos;m Reg. I like to explore new technologies and tinker
-            with electronics. I am also passionate about art and video games.
-            Tangerines are one of my favorite fruits {"\u{1F34A}"}.
-          </p>
-        </div>
-        <Image
-          id={styles["profile-pic"]}
-          src={profilePic}
-          alt="Profile Picture"
-        />
-      </section>
+      <section id="about-me">
+        <div className={styles["about-me-container"]}>
+          <div>
+            <h1 className={styles["profile-name"]}>Reg Yu</h1>
+            <h4 className={styles["profile-career"]}>Software Developer</h4>
+            <p>
+              Hello, I&apos;m Reg. I like to explore new technologies and tinker
+              with electronics. I am also passionate about art and video games.
+              Tangerines are one of my favorite fruits {"\u{1F34A}"}.
 
-      <section id="skills">
-        <h1>Skills</h1>
+              Hello, I&apos;m Reg. I like to explore new technologies and tinker
+              with electronics. I am also passionate about art and video games.
+              Tangerines are one of my favorite fruits {"\u{1F34A}"}.
+            </p>
+          </div>
+          <Image
+            className={styles["profile-pic"]}
+            src={profilePic}
+            alt="Profile Picture"
+          />
+        </div>
+ 
+        
         {icons.map((icons, index) => (
           <ScrollingIconList
             key={index}
@@ -66,9 +71,9 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
         />
       </section>
 
-      <section id="contact">
+      <section id="contact" className={styles["contact"]}>
         <h1>Contact</h1>
-        <p>Coming soon...</p>
+        <Contact />
       </section>
     </>
   );

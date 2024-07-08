@@ -1,10 +1,14 @@
-#about-me {
+.about-me-container {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  margin-bottom: 2rem;
+  grid-template-columns: 2.5fr 0fr 1fr;
+  padding-top: 2rem;
 }
 
-#profile-pic {
+.about-me-container > div > p {
+  line-height: 1.5rem;
+}
+
+.profile-pic {
   object-fit: contain;
   height: 8.5rem;
   width: 8.5rem;
@@ -14,15 +18,14 @@
   align-self: center;
 }
 
-#profile-name {
-  /* margin-block-end: 0; */
-  margin: 0;
+.profile-name {
+  margin-bottom: 0;
 }
 
-#profile-career {
+.profile-career {
   margin-block-start: 0;
 }
 
-/* #profile-desc {
-  color: gray;
-} */
+.contact {
+  margin-bottom: 5rem;
+}

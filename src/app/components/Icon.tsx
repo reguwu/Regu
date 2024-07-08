@@ -16,7 +16,7 @@ import {
 const Icon = ({ name, size }: { name: string; size: number }) => {
   switch (name) {
     case "java":
-      return <Image src="/images/icons/java.svg" 
+      return <Image src="/images/skill-icons/java.svg" 
       alt="" width={size} height={size} unoptimized={true} priority
       style={{backgroundColor: "white", borderRadius: "20%"}} />;
     case "springboot":
@@ -30,7 +30,7 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
       style={{backgroundColor: "white", borderRadius: "50%" , outline: "3px solid white", outlineOffset: "-3px"}} />;
     case "mdx":
       return (
-        <Image src={`/images/icons/mdx.svg`}
+        <Image src={`/images/skill-icons/mdx.svg`}
           alt="" width={size} height={size} unoptimized={true} priority
           style={{ backgroundColor: "black", borderRadius: "20%" }}/>
       );
@@ -38,7 +38,7 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
       return <SiFlask color="white" size={size} />;
     case "aws":
       return (
-        <Image src={`/images/icons/aws.svg`}
+        <Image src={`/images/skill-icons/aws.svg`}
           alt="" width={size} height={size} unoptimized={true} priority
           style={{ backgroundColor: "white", borderRadius: "20%" }}/>
       );
@@ -46,7 +46,7 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
       return <SiTwilio color="#ef384e" size={size} />;
     case "github":
       return (
-        <Image src={`/images/icons/github.svg`}
+        <Image src={`/images/skill-icons/github.svg`}
           alt="" width={size} height={size} unoptimized={true} priority
           style={{ backgroundColor: "white", borderRadius: "20%", outline: "2px solid black", outlineOffset: "-1px" }}/>
       );
@@ -58,7 +58,7 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
       return <SiUnity size={size} />;
     case "maven":
       return (
-        <Image src={`/images/icons/maven.svg`}
+        <Image src={`/images/skill-icons/maven.svg`}
           alt="" width={size} height={size} unoptimized={true} priority
           style={{ backgroundColor: "white", borderRadius: "20%" }}/>
       );
@@ -68,14 +68,14 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
       return <SiFlyway color="#c60000" size={size} />;
     case "oauth":
       return (
-        <Image src={`/images/icons/oauth.svg`}
+        <Image src={`/images/skill-icons/oauth.svg`}
           alt="" width={size} height={size} unoptimized={true} priority
           style={{ backgroundColor: "white", borderRadius: "20%" }}/>
       );
     default:
       return (
-        <Image src={`/images/icons/${name}.svg`}
-          alt="" width={size} height={size} unoptimized={true} priority />
+        <Image src={`/images/skill-icons/${name}.svg`}
+          alt="" width={size} height={size} priority />
       );
   }
 };
