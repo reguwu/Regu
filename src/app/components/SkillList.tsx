@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/styles/IconList.module.css";
+import styles from "@/styles/SkillList.module.css";
 import Icon from "@/components/Icon";
 
 interface Props {
@@ -7,13 +7,12 @@ interface Props {
   isVerbose?: boolean;
 }
 
-const IconList: React.FC<Props> = ({ iconNames, isVerbose }) => {
-  const duplicateIconNames = iconNames.concat(iconNames);
+const SkillList: React.FC<Props> = ({ iconNames, isVerbose }) => {
   return (
     <>
       {isVerbose ?
         <div className={styles["verbose-icons"]}>
-          {duplicateIconNames.map((name) => 
+          {iconNames.map((name) => 
             <div key={name}>
               <Icon name={name} size={40} />
               <span>{name.toUpperCase()}</span>
@@ -31,4 +30,4 @@ const IconList: React.FC<Props> = ({ iconNames, isVerbose }) => {
   );
 };
 
-export default IconList;
+export default SkillList;

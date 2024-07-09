@@ -1,4 +1,4 @@
-export const skillIcons: string[] = [
+export const skills: string[] = [
   "java",
   "python",
   "csharp",

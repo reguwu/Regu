@@ -3,7 +3,7 @@ import type { Portfolio as PortfolioType } from "@/types";
 import styles from "@/styles/Portfolio.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import IconList from "@/components/IconList";
+import SkillList from "@/components/SkillList";
 import { formatDateString } from "@/helpers/date";
 
 interface Props {
@@ -29,7 +29,7 @@ const Portfolio: React.FC<Props> = ({ portfolio }) => {
             <h3>{portfolio.name}</h3>
             <p>{formatDateString(portfolio.date)}</p>
           </div>
-          <IconList iconNames={portfolio.techStack} />
+          <SkillList iconNames={portfolio.techStack} />
           <p>{portfolio.description}</p>
         </div>
       </Link>

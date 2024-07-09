@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/styles/ScrollingIconList.module.css";
+import styles from "@/styles/ScrollingSkillList.module.css";
 import "@/styles/animation.css";
 import Icon from "@/components/Icon";
 
@@ -9,7 +9,7 @@ interface Props {
   speed: number;
 }
 
-const ScrollingIconList: React.FC<Props> = ({ iconNames, direction, speed }) => {
+const ScrollingSkillList: React.FC<Props> = ({ iconNames, direction, speed }) => {
   const duplicateIconNames = iconNames.concat(iconNames);
   return (
     <div className={styles["scrolling-icons-container"]}>
@@ -27,4 +27,4 @@ const ScrollingIconList: React.FC<Props> = ({ iconNames, direction, speed }) => 
   );
 };
 
-export default ScrollingIconList;
+export default ScrollingSkillList;

@@ -1,16 +1,15 @@
 import styles from "@styles/HomePage.module.css";
-import profilePic from "@public/images/profile-pic.jpg";
-import Image from "next/image";
 import PorfolioList from "@/components/PortfolioList";
 import type { SearchParams } from "@/types";
 import type { Portfolio as PortfolioType } from "@/types";
 import { join } from "path";
 import { getMdxContent } from "@/helpers/mdx";
 import { filterPortfolio, sliceIntoChunks } from "@/helpers/portfolio";
-import { skillIcons } from "@/data/icon/skill-icons";
-import ScrollingIconList from "@/components/ScrollingIconList";
+import { skills } from "@/data";
+import ScrollingSkillIconList from "@/components/ScrollingSkillList";
 import Contact from "@/components/Contact";
 import Divider from "@/components/ui/Divider";
+import SocialMediaList from "@/components/SocialMediaList";
 
 async function fetchPortfolio() {
   const path = join(process.cwd(), "src/app/data/portfolio");
@@ -26,7 +25,7 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
   const portfolios = await fetchPortfolio();
   const filteredPortfolios = filterPortfolio(portfolios, query);
   const pagedPortfolios = sliceIntoChunks(filteredPortfolios);
-  const icons = sliceIntoChunks(skillIcons, 12);
+  const icons = sliceIntoChunks(skills, 12);
 
   return (
     <>
@@ -45,18 +44,14 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
               Tangerines are one of my favorite fruits {"\u{1F34A}"}.
             </p>
           </div>
-          <Divider orientation="v" margin={[1.5, 1, 1.5, 1]}/>
-          <Image
-            className={styles["profile-pic"]}
-            src={profilePic}
-            alt="Profile Picture"
-          />
+          <Divider orientation="v" margin={[1.5, 1.5, 1.5, 1]}/>
+          <SocialMediaList/>
         </div>
  
-        <Divider text="Skills" orientation="h" margin={[2, 0, 2, 0]}/>
+        <Divider text="Skills" orientation="h" margin={[3, 0, 2, 0]}/>
         
         {icons.map((icons, index) => (
-          <ScrollingIconList
+          <ScrollingSkillIconList
             key={index}
             iconNames={icons}
             direction={index % 2 === 0 ? "right" : "left"}
