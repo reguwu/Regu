@@ -1,7 +1,29 @@
-#page-footer {
+.page-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+}
+
+.page-footer > div:first-child {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    height: 5rem;
+    width: 100%;
+}
+
+.page-footer div > * {
+    text-decoration: none;
+    color: gray;
+}
+
+.page-footer div:first-child > div:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    grid-gap: 2rem 4rem;
+}
+
+.page-footer > div:nth-child(2) {
+    padding: 1rem 0;
 }

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Reg Dev Portfolio",
   description: "Reg's Dev Portfolio",
   icons: {
-    icon: "/images/favicon.ico"
+    icon: "/favicon.svg"
   }
 }
 

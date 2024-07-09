@@ -15,6 +15,7 @@
     justify-content: center;
     flex-wrap: wrap;
     height: 4rem;
+    position: relative;
 }
 
 .page-navbar {
@@ -34,4 +35,10 @@
 
 .page-navbar-link:hover {
     background: linear-gradient(#38518a 0%, rgb(56, 81, 138) 60%, rgb(56, 81, 138, 0) 100%);
+}
+
+.logo {
+    position: absolute;
+    left: 0;
+    padding-left: 1.5rem;
 }

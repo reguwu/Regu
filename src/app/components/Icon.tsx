@@ -18,7 +18,7 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
   switch (name) {
     case "java":
       return <Image src="/images/icons/java.svg" 
-      alt="" width={size} height={size} unoptimized={true} priority
+      alt="" width={size} height={size} priority
       style={{backgroundColor: "white", borderRadius: "20%"}} />;
     case "springboot":
       return <SiSpringboot color="#71b544" size={size} />;
@@ -32,7 +32,7 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
     case "mdx":
       return (
         <Image src={`/images/icons/mdx.svg`}
-          alt="" width={size} height={size} unoptimized={true} priority
+          alt="" width={size} height={size} priority
           style={{ backgroundColor: "black", borderRadius: "20%" }}/>
       );
     case "flask":
@@ -40,7 +40,7 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
     case "aws":
       return (
         <Image src={`/images/icons/aws.svg`}
-          alt="" width={size} height={size} unoptimized={true} priority
+          alt="" width={size} height={size} priority
           style={{ backgroundColor: "white", borderRadius: "20%" }}/>
       );
     case "twilio":
@@ -48,7 +48,7 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
     case "github":
       return (
         <Image src={`/images/icons/github.svg`}
-          alt="" width={size} height={size} unoptimized={true} priority
+          alt="" width={size} height={size} priority
           style={{ backgroundColor: "black", borderRadius: "20%" }}/>
           // style={{ backgroundColor: "black", borderRadius: "20%", outline: "2px solid black", outlineOffset: "-1px" }}/>
       );
@@ -61,7 +61,7 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
     case "maven":
       return (
         <Image src={`/images/icons/maven.svg`}
-          alt="" width={size} height={size} unoptimized={true} priority
+          alt="" width={size} height={size} priority
           style={{ backgroundColor: "white", borderRadius: "20%" }}/>
       );
     case "docker":
@@ -71,25 +71,25 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
     case "oauth":
       return (
         <Image src={`/images/icons/oauth.svg`}
-          alt="" width={size} height={size} unoptimized={true} priority
+          alt="" width={size} height={size} priority
           style={{ backgroundColor: "white", borderRadius: "20%" }}/>
       );
     case "linkedin":
       return (
         <Image src={`/images/icons/linkedin.svg`}
-          alt="" width={size} height={size} unoptimized={true} priority
+          alt="" width={size} height={size} priority
           style={{ backgroundColor: "#0963bf", borderRadius: "20%" }}/>
       );
     case "discord":
       return (
         <Image src={`/images/icons/discord.svg`}
-          alt="" width={size} height={size} unoptimized={true} priority
+          alt="" width={size} height={size} priority
           style={{ backgroundColor: "#5865f2", borderRadius: "20%" }}/>
       );
     case "email":
       return (
         <Image src={`/images/icons/email.svg`}
-          alt="" width={size} height={size} unoptimized={true} priority
+          alt="" width={size} height={size} priority
           style={{ background: "linear-gradient(135deg, hsl(270, 100%, 30%) 0%, hsl(270, 100%, 50%) 50%, hsl(270, 100%, 70%) 100%)", borderRadius: "20%" }}/>
       );
     case "resume":
