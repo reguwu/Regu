@@ -1,0 +1,28 @@
+.social-icons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: max-content;
+  width: max-content;
+  gap: 1rem;
+  align-self: center;
+  justify-self: center;
+}
+
+.clickable {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.15rem;
+  text-decoration: none;
+  font-size: 0.70rem;
+  text-align: center;
+  color: white;
+}
+
+.clickable:hover {
+  scale: 1.05;
+  color: hsl(221, 83%, 64%);
+  font-weight: bold;
+  cursor: pointer;
+}
+
