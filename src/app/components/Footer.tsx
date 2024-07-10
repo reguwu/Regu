@@ -1,26 +1,32 @@
 import styles from "@styles/Footer.module.css"
 import Link from "next/link"
 import Image from "next/image"
-
+import { getUrlByName } from "@/data/socialMedias"
 
 const Footer: React.FC = () => {
   return (
-    <footer className={styles["page-footer"]}>
-      <div>
-        <div>
-          <Link href="/#about-me">
+    <>
+      <footer className={styles["footer"]}>
+        <div className={styles["footer-container"]}>
+          <Link href="/#about-me" className={styles["logo"]}>
             <Image src="/logo.svg" alt="Logo" width={125} height={84} priority={true}/>
           </Link>
+          <div>
+            <p className={styles["footer-column-title"]}>Section</p>
+            <Link href="/#about-me">Home</Link>
+            <Link href="/#portfolio">Portfolio</Link>
+            <Link href="/#contact">Contact</Link>
+          </div>
+          <div>
+            <p className={styles["footer-column-title"]}>Social</p>
+            <Link href={`${getUrlByName("linkedin")}`}>LinkedIn</Link>
+            <Link href={`${getUrlByName("github")}`}>Github</Link>
+            <Link href={`${getUrlByName("discord")}`}>Discord</Link>
+          </div>
         </div>
-        <div>
-          <Link href="/#contact">Github</Link>
-          <Link href="/#contact">LinkedIn</Link>
-          <Link href="/#contact">Discord</Link>
-          <Link href="/#contact">Email</Link>
-        </div>
-      </div>
-      <div>&copy; 2024 Regu</div>
-    </footer>
+      </footer>
+      <div className={styles["copyright"]}>&copy; 2024 Regu</div>
+    </>
   )
 }
 

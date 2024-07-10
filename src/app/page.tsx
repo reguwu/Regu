@@ -29,7 +29,7 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
 
   return (
     <>
-      <section id="about-me">
+      <section id="about-me" className={styles["about-me"]}>
         <div className={styles["about-me-container"]}>
           <div>
             <h1 className={styles["profile-name"]}>Reg Yu</h1>
@@ -60,7 +60,7 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
         ))}
       </section>
 
-      <section id="portfolio">
+      <section id="portfolio" className={styles["portfolio"]}>
         <h1>Portfolio</h1>
         <PorfolioList
           portfolios={portfolios}

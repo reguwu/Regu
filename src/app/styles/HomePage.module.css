@@ -1,21 +1,10 @@
 .about-me-container {
   display: grid;
   grid-template-columns: 2.5fr 0fr 1fr;
-  padding-top: 4rem;
 }
 
 .about-me-container > div > p {
   line-height: 1.5rem;
-}
-
-.profile-pic {
-  object-fit: contain;
-  height: 8.5rem;
-  width: 8.5rem;
-  border-radius: 10px;
-  border: 4px outset rgb(147, 157, 187);
-  justify-self: end;
-  align-self: center;
 }
 
 .profile-name {
@@ -27,6 +16,14 @@
   margin-block-start: 0;
 }
 
+.about-me {
+  padding-top: 4rem;
+}
+
+.portfolio {
+  margin-top: 3rem;
+}
+
 .contact {
-  margin-bottom: 5rem;
+  margin: 4rem 0;
 }
