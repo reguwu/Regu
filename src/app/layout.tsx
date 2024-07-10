@@ -5,8 +5,8 @@ import { Metadata } from 'next'
 import type { Viewport } from 'next'
 
 export const metadata: Metadata = {
-  title: "Reg Dev Portfolio",
-  description: "Reg's Dev Portfolio",
+  title: "Regu Portfolio",
+  description: "a Software Engineer portfolio",
   icons: {
     icon: "/favicon.svg"
   }

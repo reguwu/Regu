@@ -5,7 +5,6 @@ import type { Portfolio as PortfolioType } from "@/types";
 import { join } from "path";
 import { getMdxContent } from "@/helpers/mdx";
 import { filterPortfolio, sliceIntoChunks } from "@/helpers/portfolio";
-import { skills } from "@/data";
 import ScrollingSkillIconList from "@/components/ScrollingSkillList";
 import Contact from "@/components/Contact";
 import Divider from "@/components/ui/Divider";
@@ -25,7 +24,6 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
   const portfolios = await fetchPortfolio();
   const filteredPortfolios = filterPortfolio(portfolios, query);
   const pagedPortfolios = sliceIntoChunks(filteredPortfolios);
-  const icons = sliceIntoChunks(skills, 12);
 
   return (
     <>
@@ -33,7 +31,7 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
         <div className={styles["about-me-container"]}>
           <div>
             <h1 className={styles["profile-name"]}>Reg Yu</h1>
-            <h4 className={styles["profile-career"]}>Software Developer</h4>
+            <h4 className={styles["profile-career"]}>Software Engineer</h4>
             <p>
               Hello, I&apos;m Reg. I like to explore new technologies and tinker
               with electronics. I am also passionate about art and video games.
@@ -49,15 +47,7 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
         </div>
  
         <Divider text="Skills" orientation="h" margin={[3, 0, 2, 0]}/>
-        
-        {icons.map((icons, index) => (
-          <ScrollingSkillIconList
-            key={index}
-            iconNames={icons}
-            direction={index % 2 === 0 ? "right" : "left"}
-            speed={120}
-          />
-        ))}
+        <ScrollingSkillIconList speed={120}/>
       </section>
 
       <section id="portfolio" className={styles["portfolio"]}>

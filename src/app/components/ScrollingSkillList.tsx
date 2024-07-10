@@ -1,28 +1,41 @@
+"use client"
+
 import React from "react";
 import styles from "@/styles/ScrollingSkillList.module.css";
 import "@/styles/animation.css";
 import Icon from "@/components/Icon";
+import { useInView } from "react-intersection-observer"
+import { sliceIntoChunks } from "@/helpers/portfolio";
+import { skills } from "@/data";
 
 interface Props {
-  iconNames: Array<string>;
-  direction: "left" | "right";
   speed: number;
 }
 
-const ScrollingSkillList: React.FC<Props> = ({ iconNames, direction, speed }) => {
-  const duplicateIconNames = iconNames.concat(iconNames);
+const ScrollingSkillList: React.FC<Props> = ({ speed }) => {
+  const [ref, inView] = useInView({ threshold: 0.1 })
+  const icons: string[][] = [];
+  const iconChunks = sliceIntoChunks(skills, 12);
+  iconChunks.map((chunk) => icons.push(chunk.concat(chunk)));
+
   return (
-    <div className={styles["scrolling-icons-container"]}>
-      <div className={styles["scrolling-icons"]} 
-        style={{"--direction": `scroll-${direction}`, "--speed": `${speed}s`} as React.CSSProperties}
-      >
-        {duplicateIconNames.map((name, index) => 
-          <div key={`${name}_${index}`}>
-            <Icon name={name} size={40} />
-            <span>{name.toUpperCase()}</span>
-          </div>
-        )}
-      </div>
+    <div ref={ref} className={styles["scrolling-icons-container"]}>
+      {icons.map((icons, index) => (
+        <div key={index} className={styles["scrolling-icons"]} 
+          style={{
+            "--direction": `scroll-${index % 2 === 0 ? "right" : "left"}`, 
+            "--speed": `${speed}s`, 
+            animationPlayState: inView ? null : "paused"
+          } as React.CSSProperties }
+        >
+          {icons.map((name, index) => 
+            <div key={`${name}_${index}`}>
+              <Icon name={name} size={40} />
+              <span>{name.toUpperCase()}</span>
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 };
