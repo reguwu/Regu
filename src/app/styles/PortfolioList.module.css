@@ -9,3 +9,17 @@
     background-color: rgb(35, 35, 35);
     border-radius: 7.5px;
 }
+
+.no-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 63vh;
+    background-color: rgb(35, 35, 35);
+    border-radius: 1rem;
+}
+
+.no-result > :nth-child(3) {   
+    font-size: 4rem;
+}

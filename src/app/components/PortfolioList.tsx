@@ -5,10 +5,11 @@ import Portfolio from "@/components/Portfolio";
 import { Search, Pagination } from "@/components/ui";
 import { Portfolio as PortfolioType } from "@/types";
 import { useFilterPortfolio } from "@/hooks/useFilterPortfolio";
-import { sliceIntoChunks } from "@/helpers/portfolio";
+import { sliceIntoChunks } from "@/utils/portfolio";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useSkipFirstEffect } from "@/hooks";
+import { PORTFOLIO_PER_PAGE } from "@/utils/constant/portfolio";
 
 interface Props {
   currentPage: number;
@@ -23,12 +24,13 @@ const PortfolioList: React.FC<Props> = ({
 }) => {
   const searchParams = useSearchParams();
   const [updatedCurrentPage, setCurrentPage] = useState(currentPage);
-  const [updatedPagedPortfolios, setPagedPortfolios] =
-    useState(pagedPortfolios);
+  const [updatedPagedPortfolios, setPagedPortfolios] = useState(pagedPortfolios);
   const filteredPortfolios = useFilterPortfolio(portfolios);
+  const pageIndex = updatedCurrentPage <= updatedPagedPortfolios.length && updatedCurrentPage > 0
+  ? updatedCurrentPage - 1 : 0;
 
   useSkipFirstEffect(() => {
-    setPagedPortfolios(sliceIntoChunks(filteredPortfolios, 4, true));
+    setPagedPortfolios(sliceIntoChunks(filteredPortfolios, PORTFOLIO_PER_PAGE, true));
   }, [filteredPortfolios]);
 
   useSkipFirstEffect(() => {
@@ -38,20 +40,19 @@ const PortfolioList: React.FC<Props> = ({
   return (
     <>
       <Search placeholder="Search" />
-      {(filteredPortfolios.length ?? 0) > 0 && (
-        <div className={styles["portfolio-list"]}>
-          {updatedPagedPortfolios[
-            updatedCurrentPage <= updatedPagedPortfolios.length &&
-            updatedCurrentPage > 0
-              ? updatedCurrentPage - 1
-              : 0
-          ]?.map((item, index) => (
+      {(filteredPortfolios.length ?? 0) > 0 
+      ? (<div className={styles["portfolio-list"]}>
+          {updatedPagedPortfolios[pageIndex]?.map((item, index) => (
             item === null 
             ? <div key={index} className={styles["placeholder"]}></div> 
             : <Portfolio key={item.slug} portfolio={item} />
           ))}
-        </div>
-      )}
+        </div>)
+      : <div className={styles["no-result"]}>
+        <h4>Search Result</h4>
+        <p>No results found</p>
+        <p>{"\u{1F343}"}</p>
+      </div>}
       <Pagination
         totalPages={updatedPagedPortfolios.length}
         currentPage={updatedCurrentPage}
