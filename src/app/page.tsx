@@ -23,7 +23,7 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
   const currentPage = Number(searchParams?.page) || 1;
   const portfolios = await fetchPortfolio();
   const filteredPortfolios = filterPortfolio(portfolios, query);
-  const pagedPortfolios = sliceIntoChunks(filteredPortfolios);
+  const pagedPortfolios = sliceIntoChunks(filteredPortfolios, 4, true);
 
   return (
     <>

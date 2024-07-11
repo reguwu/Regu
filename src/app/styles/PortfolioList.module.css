@@ -1,5 +1,11 @@
 .portfolio-list {
     display: grid;
     grid-template-columns: repeat(2,minmax(0,1fr));
+    grid-auto-rows: 1fr;
     grid-gap: 2rem;
+}
+
+.placeholder {
+    background-color: rgb(35, 35, 35);
+    border-radius: 7.5px;
 }

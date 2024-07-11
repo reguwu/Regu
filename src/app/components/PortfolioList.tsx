@@ -28,7 +28,7 @@ const PortfolioList: React.FC<Props> = ({
   const filteredPortfolios = useFilterPortfolio(portfolios);
 
   useSkipFirstEffect(() => {
-    setPagedPortfolios(sliceIntoChunks(filteredPortfolios));
+    setPagedPortfolios(sliceIntoChunks(filteredPortfolios, 4, true));
   }, [filteredPortfolios]);
 
   useSkipFirstEffect(() => {
@@ -45,8 +45,10 @@ const PortfolioList: React.FC<Props> = ({
             updatedCurrentPage > 0
               ? updatedCurrentPage - 1
               : 0
-          ]?.map((item) => (
-            <Portfolio key={item.slug} portfolio={item} />
+          ]?.map((item, index) => (
+            item === null 
+            ? <div key={index} className={styles["placeholder"]}></div> 
+            : <Portfolio key={item.slug} portfolio={item} />
           ))}
         </div>
       )}

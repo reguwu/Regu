@@ -10,7 +10,7 @@ export const socialMedias: Array<{name: string, url: string}> = [
   {name: "", url: ""}
 ];
 
-export function getUrlByName(name: string): string | undefined {
+export default function getUrlByName(name: string): string | undefined {
   const socialMedia = socialMedias.find((media: { name: string; }) => media.name === name);
   return socialMedia ? socialMedia.url : undefined;
 }
