@@ -10,12 +10,29 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+.contact > form > textarea {
   max-width: 100%;
   min-width: 100%;
   min-height: 4rem;
 }
 
-.contact > form > input[type=submit] {
+.note {
+  display: flex;
+  justify-content: space-between;
+}
+
+.note > p > a {
+  text-decoration: none;
+  color: #4377e0;
+}
+
+.note > p > a:hover {
+  text-decoration: underline;
+}
+
+.note > input[type=submit] {
   background-color: #4377e0;
   color: white;
   padding: 14px 20px;
@@ -27,6 +44,6 @@
   align-self: flex-end;
 }
 
-.contact > form > input[type=submit]:hover {
+.note > input[type=submit]:hover {
   background-color: #5889ec;
 }

@@ -1,6 +1,8 @@
 import { Resend } from 'resend';
 import Email from '@/components/Email';
 import styles from '@/styles/Contact.module.css'
+import Link from 'next/link';
+import getUrlByName from '@/data/socialMedias';
 
 const resend = new Resend('re_123456789');
 
@@ -27,7 +29,10 @@ const Contact = async () => {
         <label htmlFor="message">Message </label>
         <textarea id="message" name="message" rows={6} placeholder="Enter your message ..."/>
 
-        <input type="submit" value="Submit"></input>
+        <div className={styles["note"]}>
+          <p>Or directly at <Link href={`${getUrlByName("email")}`}>regyu.dev@gmail.com</Link></p>
+          <input type="submit" value="Submit"></input>
+        </div>
       </form>
     </div>
   )
