@@ -4,7 +4,7 @@ import styles from "@/styles/Portfolio.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import SkillList from "@/components/SkillList";
-import { formatDateString } from "@/helpers/date";
+import { formatDateString } from "@/utils/date";
 
 interface Props {
   portfolio: PortfolioType;

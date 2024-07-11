@@ -28,7 +28,8 @@
 }
 
 .page-navbar-link {
-    padding: 1.4rem 0.5rem;
+    align-content: center;
+    height: 100%;
     color: white;
     text-decoration: none;
 }

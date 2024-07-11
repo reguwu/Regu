@@ -1,7 +1,7 @@
 import styles from "@styles/Footer.module.css"
 import Link from "next/link"
 import Image from "next/image"
-import getUrlByName from "@/data/socialMedias"
+import getUrlByName from "@/utils/constant/socialMedias"
 
 const Footer: React.FC = () => {
   return (

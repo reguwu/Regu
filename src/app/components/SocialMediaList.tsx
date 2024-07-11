@@ -1,9 +1,9 @@
 import React from 'react'
-import { socialMedias } from '@/data'
+import { socialMedias } from '@/utils/constant/socialMedias'
 import Icon from '@/components/Icon'
 import styles from '@/styles/SocialMediaList.module.css'
 import Link from 'next/link';
-import { capitalizeFirstLetter } from '@/helpers/string';
+import { capitalizeFirstLetter } from '@/utils/string';
 
 const SocialMediaList = () => {
   return (

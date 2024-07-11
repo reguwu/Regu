@@ -1,8 +1,8 @@
 import { join } from "path";
 import type { Portfolio } from "@/types";
-import { getMdxContentByFileName } from "@/helpers/mdx";
+import { getMdxContentByFileName } from "@/utils/mdx";
 import { MdxContent } from "@/types";
-import { getMdxContent } from "@/helpers/mdx";
+import { getMdxContent } from "@/utils/mdx";
 
 export const dynamicParams = false;
 export async function generateStaticParams() {

@@ -1,7 +1,7 @@
 import { readFile } from "fs/promises";
 import matter from "gray-matter";
 import { join } from "path";
-import { getFileNamesByPathAndExtension } from "@/helpers/file-system";
+import { getFileNamesByPathAndExtension } from "@/utils/file-system";
 import type { MdxContent } from "@/types";
 
 export const getMdxContent = async <T>(

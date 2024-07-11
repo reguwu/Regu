@@ -15,7 +15,7 @@ export const sliceIntoChunks = <T>(array: T[], chunkSize: number = 4, equalSize:
 
   if(equalSize) {
     const lastChunk = result[result.length - 1];
-    while(lastChunk.length < chunkSize) {
+    while(lastChunk?.length < chunkSize) {
       lastChunk.push(null as T);
     }
   }

@@ -1,0 +1,1 @@
+export const PORTFOLIO_PER_PAGE = 4;

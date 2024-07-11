@@ -2,7 +2,7 @@ import { Resend } from 'resend';
 import Email from '@/components/Email';
 import styles from '@/styles/Contact.module.css'
 import Link from 'next/link';
-import getUrlByName from '@/data/socialMedias';
+import getUrlByName from '@/utils/constant/socialMedias';
 
 const resend = new Resend('re_123456789');
 

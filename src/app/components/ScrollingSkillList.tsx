@@ -5,8 +5,8 @@ import styles from "@/styles/ScrollingSkillList.module.css";
 import "@/styles/animation.css";
 import Icon from "@/components/Icon";
 import { useInView } from "react-intersection-observer"
-import { sliceIntoChunks } from "@/helpers/portfolio";
-import { skills } from "@/data";
+import { sliceIntoChunks } from "@/utils/portfolio";
+import { SKILLS } from "@/utils/constant/skills";
 
 interface Props {
   speed: number;
@@ -15,7 +15,7 @@ interface Props {
 const ScrollingSkillList: React.FC<Props> = ({ speed }) => {
   const [ref, inView] = useInView({ threshold: 0.1 })
   const icons: string[][] = [];
-  const iconChunks = sliceIntoChunks(skills, 12);
+  const iconChunks = sliceIntoChunks(SKILLS, 12);
   iconChunks.map((chunk) => icons.push(chunk.concat(chunk)));
 
   return (

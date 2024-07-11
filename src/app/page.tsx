@@ -3,8 +3,9 @@ import PorfolioList from "@/components/PortfolioList";
 import type { SearchParams } from "@/types";
 import type { Portfolio as PortfolioType } from "@/types";
 import { join } from "path";
-import { getMdxContent } from "@/helpers/mdx";
-import { filterPortfolio, sliceIntoChunks } from "@/helpers/portfolio";
+import { getMdxContent } from "@/utils/mdx";
+import { filterPortfolio, sliceIntoChunks } from "@/utils/portfolio";
+import { PORTFOLIO_PER_PAGE } from "@/utils/constant/portfolio";
 import ScrollingSkillIconList from "@/components/ScrollingSkillList";
 import Contact from "@/components/Contact";
 import Divider from "@/components/ui/Divider";
@@ -23,7 +24,7 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
   const currentPage = Number(searchParams?.page) || 1;
   const portfolios = await fetchPortfolio();
   const filteredPortfolios = filterPortfolio(portfolios, query);
-  const pagedPortfolios = sliceIntoChunks(filteredPortfolios, 4, true);
+  const pagedPortfolios = sliceIntoChunks(filteredPortfolios, PORTFOLIO_PER_PAGE, true);
 
   return (
     <>
