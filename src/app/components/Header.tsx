@@ -7,12 +7,12 @@ const Header: React.FC = () => {
     <header className={styles["page-header"]}>
       <div className={styles["page-navbar-container"]}>
         <nav className={styles["page-navbar"]}>
-            <Link href="/#about-me" className={styles["logo"]}>
+            <Link href="#about-me" className={styles["logo"]}>
               <Image src="/logo.svg" alt="Logo" width={100} height={67} priority={true}/>
             </Link>
-            <Link href="/#about-me" className={styles["page-navbar-link"]}>Home</Link>
-            <Link href="/#portfolio" className={styles["page-navbar-link"]}>Portfolio</Link>
-            <Link href="/#contact" className={styles["page-navbar-link"]}>Contact</Link>
+            <Link href="#about-me" className={styles["page-navbar-link"]}>Home</Link>
+            <Link href="#portfolio" className={styles["page-navbar-link"]}>Portfolio</Link>
+            <Link href="#contact" className={styles["page-navbar-link"]}>Contact</Link>
         </nav>
       </div>
     </header>

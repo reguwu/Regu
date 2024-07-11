@@ -3,11 +3,7 @@ import { socialMedias } from '@/data'
 import Icon from '@/components/Icon'
 import styles from '@/styles/SocialMediaList.module.css'
 import Link from 'next/link';
-
-
-function capitalizeFirstLetter(string: string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
+import { capitalizeFirstLetter } from '@/helpers/string';
 
 const SocialMediaList = () => {
   return (
