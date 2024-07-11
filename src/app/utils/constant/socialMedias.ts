@@ -1,5 +1,5 @@
 export const socialMedias: Array<{name: string, url: string}> = [
-  {name: "linkedin", url: "https://linkedin.com/in/reg-yu-416057198"},
+  {name: "linkedin", url: "https://linkedin.com/in/reg-yu"},
   {name: "github", url: "https://github.com/rgrs412"},
   {name: "discord", url: "https://discord.gg/dcdH99uyqh"},
   {name: "email", url: "mailto:regyu.dev@gmail.com"},

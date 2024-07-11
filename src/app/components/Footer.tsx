@@ -1,9 +1,13 @@
+"use client"
+
 import styles from "@styles/Footer.module.css"
 import Link from "next/link"
 import Image from "next/image"
 import getUrlByName from "@/utils/constant/socialMedias"
+import { useGetHrefWithAnchor } from "@/hooks/useGetHrefAnchor"
 
 const Footer: React.FC = () => {
+  const getHref = useGetHrefWithAnchor();
   return (
     <>
       <footer className={styles["footer"]}>
@@ -13,9 +17,9 @@ const Footer: React.FC = () => {
           </Link>
           <div>
             <p className={styles["footer-column-title"]}>Section</p>
-            <Link href="#about-me">Home</Link>
-            <Link href="#portfolio">Portfolio</Link>
-            <Link href="#contact">Contact</Link>
+            <Link href={getHref("/", "#about-me")}>Home</Link>
+            <Link href={getHref("/", "#portfolio")}>Portfolio</Link>
+            <Link href={getHref("/", "#contact")}>Contact</Link>
           </div>
           <div>
             <p className={styles["footer-column-title"]}>Social</p>
