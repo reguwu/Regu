@@ -1,19 +1,18 @@
 import React from "react";
 import type { Portfolio as PortfolioType } from "@/types";
-import styles from "@/styles/Portfolio.module.css";
+import styles from "@/styles/PortfolioItem.module.css";
 import Image from "next/image";
-import Link from "next/link";
-import SkillList from "@/components/SkillList";
+import SkillList from "@/components/content/SkillList";
 import { formatDateString } from "@/utils/date";
 
 interface Props {
   portfolio: PortfolioType;
 }
 
-const Portfolio: React.FC<Props> = ({ portfolio }) => {
+const PortfolioItem: React.FC<Props> = ({ portfolio }) => {
   return (
     <div className={styles["portfolio-item"]}>
-      <Link href={`/portfolio/${portfolio.slug}`} className={styles["portfolio-item-link"]}>
+      <a href={`/portfolio/${portfolio.slug}`} className={styles["portfolio-item-link"]}>
         <div className={styles["cover-image-container"]}>
           <Image
             src={portfolio.image}
@@ -32,9 +31,9 @@ const Portfolio: React.FC<Props> = ({ portfolio }) => {
           <SkillList iconNames={portfolio.techStack} />
           <p>{portfolio.description}</p>
         </div>
-      </Link>
+      </a>
     </div>
   );
 };
 
-export default Portfolio;
+export default PortfolioItem;

@@ -1,5 +1,5 @@
 import { Resend } from 'resend';
-import Email from '@/components/Email';
+import Email from '@/components/content/Email';
 import styles from '@/styles/Contact.module.css'
 import Link from 'next/link';
 import getUrlByName from '@/utils/constant/socialMedias';

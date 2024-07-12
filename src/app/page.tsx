@@ -1,15 +1,15 @@
 import styles from "@styles/HomePage.module.css";
-import PorfolioList from "@/components/PortfolioList";
+import PorfolioList from "@/components/content/PortfolioList";
 import type { SearchParams } from "@/types";
 import type { Portfolio as PortfolioType } from "@/types";
 import { join } from "path";
 import { getMdxContent } from "@/utils/mdx";
 import { filterPortfolio, sliceIntoChunks } from "@/utils/portfolio";
 import { PORTFOLIO_PER_PAGE } from "@/utils/constant/portfolio";
-import ScrollingSkillIconList from "@/components/ScrollingSkillList";
-import Contact from "@/components/Contact";
-import Divider from "@/components/ui/Divider";
-import SocialMediaList from "@/components/SocialMediaList";
+import ScrollingSkillIconList from "@/components/content/ScrollingSkillList";
+import Contact from "@/components/content/Contact";
+import { Divider } from "@/components/divider";
+import SocialMediaList from "@/components/content/SocialMediaList";
 
 async function fetchPortfolio() {
   const path = join(process.cwd(), "src/app/data/portfolio");
@@ -28,7 +28,7 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
 
   return (
     <>
-      <section id="about-me" className={styles["about-me"]}>
+      <section id="home" className={styles["about-me"]}>
         <div className={styles["about-me-container"]}>
           <div>
             <h1 className={styles["profile-name"]}>Reg Yu</h1>

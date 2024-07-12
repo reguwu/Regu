@@ -3,7 +3,7 @@
 import React from "react";
 import styles from "@/styles/ScrollingSkillList.module.css";
 import "@/styles/animation.css";
-import Icon from "@/components/Icon";
+import Icon from "@/components/content/Icon";
 import { useInView } from "react-intersection-observer"
 import { sliceIntoChunks } from "@/utils/portfolio";
 import { SKILLS } from "@/utils/constant/skills";

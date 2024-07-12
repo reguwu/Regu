@@ -5,10 +5,9 @@ import { useSearchParams, usePathname } from 'next/navigation';
 interface Props {
   totalPages: number
   currentPage: number
-  query?: string
 }
 
-export const Pagination: React.FC<Props> = ({totalPages, currentPage, query}) => {
+export const Pagination: React.FC<Props> = ({totalPages, currentPage}) => {
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
   if(pageNumbers.length === 0) pageNumbers.push(1);
   const searchParams = useSearchParams();

@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/components/content/Header";
+import Footer from "@/components/content/Footer";
 import { Metadata } from 'next'
 import type { Viewport } from 'next'
 

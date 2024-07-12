@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "@/styles/SkillList.module.css";
-import Icon from "@/components/Icon";
+import Icon from "@/components/content/Icon";
 
 interface Props {
   iconNames: Array<string>;

@@ -1,8 +1,8 @@
 "use client";
 
 import styles from "@styles/PortfolioList.module.css";
-import Portfolio from "@/components/Portfolio";
-import { Search, Pagination } from "@/components/ui";
+import Portfolio from "@/components/content/PortfolioItem";
+import { Search, Pagination } from "@/components/content-navigation";
 import { Portfolio as PortfolioType } from "@/types";
 import { useFilterPortfolio } from "@/hooks/useFilterPortfolio";
 import { sliceIntoChunks } from "@/utils/portfolio";
@@ -56,7 +56,6 @@ const PortfolioList: React.FC<Props> = ({
       <Pagination
         totalPages={updatedPagedPortfolios.length}
         currentPage={updatedCurrentPage}
-        query = {searchParams.get("query") || ""}
       />
     </>
   );

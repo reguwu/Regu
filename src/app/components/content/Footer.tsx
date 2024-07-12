@@ -4,7 +4,7 @@ import styles from "@styles/Footer.module.css"
 import Link from "next/link"
 import Image from "next/image"
 import getUrlByName from "@/utils/constant/socialMedias"
-import { useGetHrefWithAnchor } from "@/hooks/useGetHrefAnchor"
+import { useGetHrefWithAnchor } from "@/hooks/useGetHrefWithAnchor"
 
 const Footer: React.FC = () => {
   const getHref = useGetHrefWithAnchor();
@@ -12,12 +12,12 @@ const Footer: React.FC = () => {
     <>
       <footer className={styles["footer"]}>
         <div className={styles["footer-container"]}>
-          <Link href="#about-me" className={styles["logo"]}>
+          <Link href={getHref("/", "#home")} className={styles["logo"]}>
             <Image src="/logo.svg" alt="Logo" width={125} height={84} priority={true}/>
           </Link>
           <div>
             <p className={styles["footer-column-title"]}>Section</p>
-            <Link href={getHref("/", "#about-me")}>Home</Link>
+            <Link href={getHref("/", "#home")}>Home</Link>
             <Link href={getHref("/", "#portfolio")}>Portfolio</Link>
             <Link href={getHref("/", "#contact")}>Contact</Link>
           </div>
