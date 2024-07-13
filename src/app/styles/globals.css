@@ -9,6 +9,13 @@ html, body {
   scroll-padding-top: 4rem;
 }
 
+body {
+  background-image: url("/images/background.png");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-attachment: fixed;
+}
+
 header > div, main, footer {
   margin: auto;
   max-width: 45rem;
