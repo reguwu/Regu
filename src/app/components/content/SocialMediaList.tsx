@@ -1,5 +1,5 @@
 import React from 'react'
-import { socialMedias } from '@/utils/constant/socialMedias'
+import { socialMedias } from '@/utils/constant'
 import Icon from '@/components/content/Icon'
 import styles from '@/styles/SocialMediaList.module.css'
 import Link from 'next/link';

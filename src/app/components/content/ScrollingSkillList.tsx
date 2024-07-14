@@ -6,7 +6,7 @@ import "@/styles/animation.css";
 import Icon from "@/components/content/Icon";
 import { useInView } from "react-intersection-observer"
 import { sliceIntoChunks } from "@/utils/portfolio";
-import { SKILLS } from "@/utils/constant/skills";
+import { SKILLS } from "@/utils/constant";
 
 interface Props {
   speed: number;
