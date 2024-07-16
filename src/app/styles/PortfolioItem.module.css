@@ -30,8 +30,11 @@
     margin: 0;
 }
 
-.portfolio-item-header > p {
-    color: white;
+.portfolio-item-header > div > p {
+    color: rgb(109, 255, 46);
+    margin: 0;
+    font-size: medium;
+    font-weight: 600;
 }
 
 .portfolio-item-content {

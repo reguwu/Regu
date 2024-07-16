@@ -12,7 +12,7 @@ export type Portfolio = {
     slug: string
 }
 
-type CategoryTypes = 'software' | 'game'
+type CategoryTypes = 'Software' | 'Game'
 
 export type SearchParams = {
     query?: string;

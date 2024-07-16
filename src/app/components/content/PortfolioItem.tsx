@@ -26,10 +26,12 @@ const PortfolioItem: React.FC<Props> = ({ portfolio }) => {
         <div className={styles["portfolio-item-content"]}>
           <div className={styles["portfolio-item-header"]}>
             <h3>{portfolio.name}</h3>
-            <p>{formatDateString(portfolio.date)}</p>
+            <div>
+              <p>{portfolio.category}</p>
+            </div>
           </div>
           <SkillList iconNames={portfolio.techStack} />
-          <p>{portfolio.description}</p>
+          <p>{portfolio.description}<br/><br/></p>
         </div>
       </a>
     </div>

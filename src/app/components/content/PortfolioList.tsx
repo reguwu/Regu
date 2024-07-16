@@ -42,6 +42,7 @@ const PortfolioList: React.FC<Props> = ({
   return (
     <>
       <Search placeholder="Search" />
+
       <LazyMotion features={domAnimation}>
         <AnimatePresence initial={false}>
           {(filteredPortfolios.length ?? 0) > 0 
@@ -70,6 +71,7 @@ const PortfolioList: React.FC<Props> = ({
           }
         </AnimatePresence>
       </LazyMotion>
+      
       <Pagination
         totalPages={updatedPagedPortfolios.length}
         currentPage={updatedCurrentPage}

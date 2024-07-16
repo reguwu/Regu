@@ -23,9 +23,9 @@ const Footer: React.FC = () => {
           </div>
           <div>
             <p className={styles["footer-column-title"]}>Social</p>
-            <Link href={`${getUrlByName("linkedin")}`} target="_blank" rel="noopener noreferrer">LinkedIn</Link>
-            <Link href={`${getUrlByName("github")}`} target="_blank" rel="noopener noreferrer">Github</Link>
-            <Link href={`${getUrlByName("discord")}`} target="_blank" rel="noopener noreferrer">Discord</Link>
+            <Link href={`${getUrlByName("LinkedIn")}`} target="_blank" rel="noopener noreferrer">LinkedIn</Link>
+            <Link href={`${getUrlByName("GitHub")}`} target="_blank" rel="noopener noreferrer">GitHub</Link>
+            <Link href={`${getUrlByName("Discord")}`} target="_blank" rel="noopener noreferrer">Discord</Link>
           </div>
         </div>
       </footer>
