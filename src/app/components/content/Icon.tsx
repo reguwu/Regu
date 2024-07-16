@@ -10,9 +10,12 @@ import {
   SiJira,
   SiGradle,
   SiDocker,
-  SiFlyway
+  SiFlyway,
+  SiGithub
 } from "react-icons/si";
 import { IoReader } from "react-icons/io5";
+import { TbExternalLink } from "react-icons/tb";
+import { RiComputerLine } from "react-icons/ri";
 
 const Icon = ({ name, size }: { name: string; size: number }) => {
   switch (name) {
@@ -52,6 +55,8 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
           style={{ backgroundColor: "black", borderRadius: "20%" }}/>
           // style={{ backgroundColor: "black", borderRadius: "20%", outline: "2px solid black", outlineOffset: "-1px" }}/>
       );
+    case "github-2": 
+      return <SiGithub color="white" size={size} />
     case "jira":
       return <SiJira color="#2580f7" size={size} />;
     case "gradle":
@@ -107,6 +112,10 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
           <IoReader color="white" size={size*0.8} />
         </div>
       );
+    case "external-link":
+      return <TbExternalLink color="white" size={size} />
+    case "computer":
+      return <RiComputerLine color="white" size={size} />
     case "": {
       return (
         <div style={{

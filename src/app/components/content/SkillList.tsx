@@ -4,17 +4,17 @@ import Icon from "@/components/content/Icon";
 
 interface Props {
   iconNames: Array<string>;
-  isVerbose?: boolean;
+  verbose?: boolean;
 }
 
-const SkillList: React.FC<Props> = ({ iconNames, isVerbose }) => {
+const SkillList: React.FC<Props> = ({ iconNames, verbose }) => {
   return (
     <>
-      {isVerbose ?
+      {verbose ?
         <div className={styles["verbose-icons"]}>
           {iconNames.map((name) => 
             <div key={name}>
-              <Icon name={name} size={40} />
+              <Icon name={name} size={30} />
               <span>{name.toUpperCase()}</span>
             </div>
           )}
