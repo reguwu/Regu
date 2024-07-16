@@ -37,11 +37,11 @@
 }
 
 .header > :nth-child(2) {
-  background-color: rgb(93, 154, 67);
   border-radius: 5px;
   width: max-content;
   padding: 0.1rem 0.5rem;
   margin-right: 1rem;
+  font-weight: bold;
 }
 
 

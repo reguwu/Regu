@@ -3,7 +3,8 @@ import type { Portfolio as PortfolioType } from "@/types";
 import styles from "@/styles/PortfolioItem.module.css";
 import Image from "next/image";
 import SkillList from "@/components/content/SkillList";
-import { formatDateString } from "@/utils/date";
+import { CategoryColor } from "@/utils/constant";
+import { Label } from "@/components/content/Label";
 
 interface Props {
   portfolio: PortfolioType;
@@ -27,7 +28,7 @@ const PortfolioItem: React.FC<Props> = ({ portfolio }) => {
           <div className={styles["portfolio-item-header"]}>
             <h3>{portfolio.name}</h3>
             <div>
-              <p>{portfolio.category}</p>
+              <Label color={CategoryColor[portfolio.category]} text={portfolio.category} />
             </div>
           </div>
           <SkillList iconNames={portfolio.techStack} />

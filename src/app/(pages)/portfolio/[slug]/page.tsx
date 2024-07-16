@@ -9,7 +9,7 @@ import styles from "@styles/PortfolioPage.module.css";
 import SkillList from "@/components/content/SkillList";
 import { formatDateString } from "@/utils/date";
 import { LightboxWrapper } from "@/components/content-navigation/lightbox";
-import { UNEVEN_POOL_SLIDES } from "@/utils/constant";
+import { CategoryColor, UNEVEN_POOL_SLIDES } from "@/utils/constant";
 import Link from "next/link";
 import Icon from "@/components/content/Icon";
 import { Divider } from "@/components/divider";
@@ -39,7 +39,9 @@ const PortfolioPage = async ({ params }: { params: { slug: string } }) => {
         <div className={styles["header-container"]}>
           <div className={styles["header"]}>
             <div>{portfolio.metadata.name}</div>
-            <span>{portfolio.metadata.category}</span>
+            <span style={{backgroundColor: `${CategoryColor[portfolio.metadata.category]}`}}>
+              {portfolio.metadata.category}
+            </span>
             <span>{formatDateString(portfolio.metadata.date, { year: 'numeric', month: 'long', day: 'numeric' })}</span>
           </div>
           <div className={styles["links-container"]}>
