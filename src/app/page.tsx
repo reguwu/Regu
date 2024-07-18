@@ -8,7 +8,7 @@ import { filterPortfolio, sliceIntoChunks } from "@/utils/portfolio";
 import { PORTFOLIO_PER_PAGE } from "@/utils/constant/portfolio";
 import ScrollingSkillIconList from "@/components/content/ScrollingSkillList";
 import Contact from "@/components/content/Contact";
-import { Divider } from "@/components/divider";
+import { Divider } from "@/components/ui/divider";
 import SocialMediaList from "@/components/content/SocialMediaList";
 
 async function fetchPortfolio() {

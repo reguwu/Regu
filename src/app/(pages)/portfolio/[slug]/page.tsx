@@ -4,15 +4,15 @@ import { getMdxContentByFileName } from "@/utils/mdx";
 import { MdxContent } from "@/types";
 import { getMdxContent } from "@/utils/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { MdxComponents } from "@/components/mdx";
+import { MdxComponents } from "@/components/content/mdx";
 import styles from "@styles/PortfolioPage.module.css";
 import SkillList from "@/components/content/SkillList";
 import { formatDateString } from "@/utils/date";
-import { LightboxWrapper } from "@/components/content-navigation/lightbox";
+import { LightboxWrapper } from "@/components/ui/navigation/lightbox";
 import { CategoryColor, UNEVEN_POOL_SLIDES } from "@/utils/constant";
 import Link from "next/link";
 import Icon from "@/components/content/Icon";
-import { Divider } from "@/components/divider";
+import { Divider } from "@/components/ui/divider";
 
 export const dynamicParams = false;
 export async function generateStaticParams() {

@@ -1,3 +1,5 @@
+@value medium-screen-max-width from './constant.css';
+
 .page-header {
     position: sticky;
     top: 0;
@@ -20,10 +22,21 @@
 .page-navbar {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 1.5rem;
     height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: medium-screen-max-width) {
+    .page-navbar {
+        justify-content: end;
+    }
+
+    .page-navbar-link {
+        display: none;
+    }
 }
 
 .page-navbar-link {
@@ -41,5 +54,11 @@
 .logo {
     position: absolute;
     left: 0;
+    top: 0.95rem;
     padding-left: 1.5rem;
+}
+
+.logo-image {
+    width: 100px;
+    height: 100%;
 }

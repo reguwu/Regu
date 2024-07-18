@@ -1,6 +1,25 @@
+@value medium-screen-max-width from './constant.css';
+
 .about-me-container {
   display: grid;
   grid-template-columns: 2.5fr 0fr 1fr;
+}
+
+@media screen and (max-width: medium-screen-max-width) {
+  .about-me-container {
+    display: flex;
+    flex-direction: column-reverse;
+    grid-template-columns: none;
+    gap: 3rem;
+  }
+
+  .about-me-container > div > * {
+    text-align: center;
+  }
+
+  .about-me-container > div:nth-child(2) {
+    display: none;
+  }
 }
 
 .about-me-container > div > p {

@@ -3,7 +3,7 @@
 import Lightbox, { SlideImage } from "yet-another-react-lightbox";
 import { Inline, Zoom } from "yet-another-react-lightbox/plugins";
 import Captions from "yet-another-react-lightbox/plugins/captions";
-import { NextJsImage } from "@/components/content-navigation/lightbox";
+import { NextJsImage } from "@/components/ui/navigation/lightbox";
 import Counter from "yet-another-react-lightbox/plugins/counter";
 
 import "yet-another-react-lightbox/plugins/thumbnails.css";

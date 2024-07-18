@@ -13,9 +13,10 @@ import {
   SiFlyway,
   SiGithub
 } from "react-icons/si";
-import { IoReader } from "react-icons/io5";
+import { IoReader, IoHome, IoFolderSharp, IoMail } from "react-icons/io5";
 import { TbExternalLink } from "react-icons/tb";
 import { RiComputerLine } from "react-icons/ri";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Icon = ({ name, size }: { name: string; size: number }) => {
   switch (name) {
@@ -97,6 +98,8 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
           alt="" width={size} height={size} priority
           style={{ background: "linear-gradient(135deg, hsl(270, 100%, 30%) 0%, hsl(270, 100%, 50%) 50%, hsl(270, 100%, 70%) 100%)", borderRadius: "20%" }}/>
       );
+    case "email-2":
+      return <IoMail color="white" size={size} />
     case "resume":
       return (
         <div style={{
@@ -116,6 +119,12 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
       return <TbExternalLink color="white" size={size} />
     case "computer":
       return <RiComputerLine color="white" size={size} />
+    case "hamburger":
+      return <GiHamburgerMenu color="white" size={size} />
+    case "home":
+      return <IoHome color="white" size={size} />
+    case "folder":
+      return <IoFolderSharp color="white" size={size} />
     case "": {
       return (
         <div style={{

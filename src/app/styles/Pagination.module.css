@@ -8,9 +8,10 @@
 .pagination {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  width: 33%;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
 }
 
 .pagination-item {

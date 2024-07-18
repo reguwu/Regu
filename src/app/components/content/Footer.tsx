@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
       <footer className={styles["footer"]}>
         <div className={styles["footer-container"]}>
           <Link href={getHref("/", "#home")} className={styles["logo"]}>
-            <Image src="/logo.svg" alt="Logo" width={125} height={84} priority={true}/>
+            <Image className={styles["logo-image"]} src="/logo.svg" alt="Logo" width={0} height={0} priority={true}/>
           </Link>
           <div>
             <p className={styles["footer-column-title"]}>Section</p>
