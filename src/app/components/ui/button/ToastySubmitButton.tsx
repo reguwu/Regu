@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useRef, useState } from 'react';
 import styles from "@/styles/ToastySubmitButton.module.css";
 import { Toast } from '@/components/ui/toast';
@@ -7,9 +5,10 @@ import { Toast } from '@/components/ui/toast';
 interface Props {
   title: string;
   description: string;
+  disabled?: boolean;
 }
 
-export const ToastySubmitButton = ({ title, description }: Props) => {
+export const ToastySubmitButton = ({ title, description, disabled }: Props) => {
   const [open, setOpen] = useState(false);
   const timerRef = useRef(0);
 
@@ -19,7 +18,7 @@ export const ToastySubmitButton = ({ title, description }: Props) => {
 
   return (
     <>
-      <button
+      <button id='toasty-submit-button'
         className={styles["button"]}
         onClick={() => {
           setOpen(false);
@@ -28,6 +27,8 @@ export const ToastySubmitButton = ({ title, description }: Props) => {
             setOpen(true);
           }, 100);
         }}
+        type="submit"
+        disabled={disabled}
       >
         Submit
       </button>
