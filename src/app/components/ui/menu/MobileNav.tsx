@@ -16,7 +16,7 @@ export const MobileNav = () => {
       <DropdownMenu.Portal>
         <DropdownMenu.Content className={styles["content"]} side='top' align='end' onCloseAutoFocus={(e) => e.preventDefault()}>
           <DropdownMenu.Item onSelect={() => window.location.href = getHref("/", "#home")} className={styles["item"]}>
-            <Icon name="hamburger" size={20} />
+            <Icon name="home" size={20} />
             Home
           </DropdownMenu.Item>
           <DropdownMenu.Item onSelect={() => window.location.href = getHref("/", "#portfolio")} className={styles["item"]}>

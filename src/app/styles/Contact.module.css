@@ -32,7 +32,7 @@
   text-decoration: underline;
 }
 
-.note > input[type=submit] {
+/* .note > input[type=submit] {
   background-color: #4377e0;
   color: white;
   padding: 14px 20px;
@@ -42,8 +42,12 @@
   cursor: pointer;
   width: fit-content;
   align-self: flex-end;
-}
+} */
 
 .note > input[type=submit]:hover {
   background-color: #5889ec;
+}
+
+.note > :last-child {
+  
 }

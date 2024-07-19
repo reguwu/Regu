@@ -3,13 +3,15 @@ import Email from '@/components/content/Email';
 import styles from '@/styles/Contact.module.css'
 import Link from 'next/link';
 import getUrlByName from '@/utils/constant/socialMedias';
+import { ToastySubmitButton } from '@/components/ui/button/ToastySubmitButton';
 
-const resend = new Resend('re_123456789');
+
 
 async function sendEmail(formData: FormData) {
   'use server'
 
-  console.log(formData)
+  // console.log(formData)
+  // const resend = new Resend('re_123456789');
 
   // await resend.emails.send({
   //   from: 'you@example.com',
@@ -27,11 +29,14 @@ const Contact = async () => {
         <input type="text" id="email" name="email" placeholder="Enter your email"/>
 
         <label htmlFor="message">Message </label>
-        <textarea id="message" name="message" rows={6} placeholder="Enter your message ..."/>
+        <textarea id="message" name="message" rows={6} placeholder="Enter your message"/>
 
         <div className={styles["note"]}>
           <p>Or directly at <Link href={`${getUrlByName("email")}`}>regyu.dev@gmail.com</Link></p>
-          <input type="submit" value="Submit"></input>
+          <ToastySubmitButton 
+            title="Message Sent" 
+            description="Thank you for your message. I'll get back to you as soon as possible." 
+          />
         </div>
       </form>
     </div>

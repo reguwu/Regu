@@ -2,7 +2,7 @@ import { MDXComponents } from "mdx/types"
 import Image, { ImageProps } from "next/image"
 
 export const MdxComponents: MDXComponents = {
-  p: ({ children }: any) => <p style={{ color: 'white' }}>{children}</p>,
+  p: ({ children }: any) => <p style={{ color: "unset" }}>{children}</p>,
   ul: ({ children }: any) => <ul style={{ paddingInlineStart: 30 }}>{children}</ul>,
   Image: (props: ImageProps) => (
     <Image

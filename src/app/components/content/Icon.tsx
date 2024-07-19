@@ -13,7 +13,7 @@ import {
   SiFlyway,
   SiGithub
 } from "react-icons/si";
-import { IoReader, IoHome, IoFolderSharp, IoMail } from "react-icons/io5";
+import { IoReader, IoHome, IoFolderSharp, IoMail, IoClose } from "react-icons/io5";
 import { TbExternalLink } from "react-icons/tb";
 import { RiComputerLine } from "react-icons/ri";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -125,6 +125,8 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
       return <IoHome color="white" size={size} />
     case "folder":
       return <IoFolderSharp color="white" size={size} />
+    case "close": 
+      return <IoClose size={size} />
     case "": {
       return (
         <div style={{

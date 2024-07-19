@@ -2,7 +2,7 @@
 
 .button {
   all: unset;
-  padding: 0.5rem;
+  padding: 0.4rem;
   font-size: 0;
   background-color: hsla(0, 0%, 30%, 0.75);
   border: solid 2px hsla(0, 0%, 30%, 1);
