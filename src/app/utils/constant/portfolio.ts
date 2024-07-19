@@ -11,7 +11,7 @@ export const UNEVEN_POOL_SLIDES = [
   {src: "/images/portfolio/uneven-pool/level-4.png", title: "Level 4"},
 ]
 
-export const CategoryColor = {
+export const CATEGORY_COLOR = {
   "Software": "hsl(212, 78%, 30%)",
   "Game": "hsl(117, 50%, 30%)",
 }
