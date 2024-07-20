@@ -2,16 +2,15 @@
 
 import { Resend } from "resend";
 import Email from "@/components/content/Email";
+import { EMAIL } from "@/utils/constant";
 
 export const sendEmail = async (formData: FormData) => {
-
-  console.log(formData);
-  const resend = new Resend('re_123456789');
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   await resend.emails.send({
-    from: 'you@example.com',
-    to: 'user@gmail.com',
-    subject: 'hello world',
-    react: <Email msg={"msg"} />,
+    from: "onboarding@resend.dev",
+    to: EMAIL,
+    subject: `From ${formData.get("email")?.toString()}`,
+    react: <Email msg={formData.get("message")?.toString()} />,
   });
 }

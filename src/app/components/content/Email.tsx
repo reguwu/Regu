@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Html } from "@react-email/components";
 
 interface Props {
-  msg: string
+  msg?: string
 }
 
 const Email = ({msg}: Props) => {

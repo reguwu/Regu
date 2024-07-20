@@ -3,7 +3,7 @@
 import styles from "@styles/Footer.module.css"
 import Link from "next/link"
 import Image from "next/image"
-import getUrlByName from "@/utils/constant/socialMedias"
+import { getUrlByName } from "@/utils/constant"
 import { useGetHrefWithAnchor } from "@/hooks/useGetHrefWithAnchor"
 
 const Footer: React.FC = () => {

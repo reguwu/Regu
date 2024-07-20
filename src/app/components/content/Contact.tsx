@@ -2,10 +2,10 @@
 
 import styles from "@/styles/Contact.module.css";
 import Link from "next/link";
-import getUrlByName from "@/utils/constant/socialMedias";
 import { ToastySubmitButton } from "@/components/ui/button/ToastySubmitButton";
 import { useState } from "react";
 import { sendEmail } from "@/utils/email";
+import { EMAIL, getUrlByName } from "@/utils/constant";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -47,7 +47,7 @@ const Contact = () => {
         <div className={styles["footer"]}>
           <p>
             Or directly at{" "}
-            <Link href={`${getUrlByName("email")}`}>regyu.dev@gmail.com</Link>
+            <Link href={`${getUrlByName("email")}`}>{EMAIL}</Link>
           </p>
           <ToastySubmitButton
             title="Message Sent"
