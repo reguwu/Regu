@@ -32,7 +32,7 @@ const PortfolioItem: React.FC<Props> = ({ portfolio }) => {
             </div>
           </div>
           <SkillList iconNames={portfolio.techStack} />
-          <p>{portfolio.description}<br/><br/></p>
+          <p>{portfolio.description}<br/></p>
         </div>
       </a>
     </div>

@@ -10,10 +10,10 @@ import { Portfolio } from "@/types";
 export const filterPortfolio = (portfolios: Portfolio[], query: string) => {
   const filteredPortfolios = portfolios.filter((p) => {
     return (
-      p.name.toLowerCase().includes(query.toLowerCase()) ||
-      p.description.toLowerCase().includes(query.toLowerCase()) ||
+      p.name?.toLowerCase().includes(query.toLowerCase()) ||
+      p.description?.toLowerCase().includes(query.toLowerCase()) ||
       p.techStack
-        .map((s) => s.toLowerCase().includes(query.toLowerCase()))
+        ?.map((s) => s.toLowerCase().includes(query.toLowerCase()))
         .includes(true)
     );
   });

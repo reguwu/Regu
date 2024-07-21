@@ -3,17 +3,20 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.75rem;
+  padding-top: 0.25rem;
 }
 
-.icons > * {
-  transform: scale(1.25);
+.icons > span {
+  font-size: small;
+  align-content: end;
+  font-weight: bold;
 }
 
 .verbose-icons {
   display: flex;
   flex-direction: row;
   gap: 0.50rem;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
  
 .verbose-icons > div {
@@ -29,6 +32,6 @@
 
 .verbose-icons > div > span {
  font-weight: 500;
- font-size: 0.85rem;
+ font-size: 0.75rem;
  white-space: nowrap;
 }

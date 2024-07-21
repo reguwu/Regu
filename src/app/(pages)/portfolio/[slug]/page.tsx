@@ -9,10 +9,11 @@ import styles from "@styles/PortfolioPage.module.css";
 import SkillList from "@/components/content/SkillList";
 import { formatDateString } from "@/utils/date";
 import { LightboxWrapper } from "@/components/ui/navigation/lightbox";
-import { CATEGORY_COLOR, UNEVEN_POOL_SLIDES } from "@/utils/constant";
+import { CATEGORY_COLOR } from "@/utils/constant";
 import Link from "next/link";
 import Icon from "@/components/content/Icon";
 import { Divider } from "@/components/ui/divider";
+import { Slide } from "yet-another-react-lightbox";
 
 export const dynamicParams = false;
 export async function generateStaticParams() {
@@ -62,7 +63,7 @@ const PortfolioPage = async ({ params }: { params: { slug: string } }) => {
 
         <SkillList iconNames={portfolio.metadata.techStack} verbose/>
         <Divider text="Gallery" margin={[2.5, 0, 1.5, 0]}/>
-        <LightboxWrapper images={UNEVEN_POOL_SLIDES}/>
+        <LightboxWrapper slides={portfolio.metadata.gallery as Slide[]}/>
 
         <div className={styles["mdx-content"]}>
           <MDXRemote source={portfolio.content} components={MdxComponents}/>

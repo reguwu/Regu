@@ -10,9 +10,15 @@ export type Portfolio = {
     category: CategoryTypes
     techStack: Array<string>
     slug: string
+    gallery?: Array<LightboxSlideProps>
 }
 
 type CategoryTypes = 'Software' | 'Game'
+
+type LightboxSlideProps = {
+    src: string
+    title: string
+}
 
 export type SearchParams = {
     query?: string;

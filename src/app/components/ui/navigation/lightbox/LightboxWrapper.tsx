@@ -1,6 +1,6 @@
 "use client"
 
-import Lightbox, { SlideImage } from "yet-another-react-lightbox";
+import Lightbox, { Slide } from "yet-another-react-lightbox";
 import { Inline, Zoom } from "yet-another-react-lightbox/plugins";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import { NextJsImage } from "@/components/ui/navigation/lightbox";
@@ -13,12 +13,12 @@ import "yet-another-react-lightbox/styles.css";
 import "@/styles/lightbox.css";
 
 interface Props {
-  images: SlideImage[]
+  slides: Slide[]
 }
-export const LightboxWrapper = ({ images }: Props) => {
+export const LightboxWrapper = ({ slides }: Props) => {
   return (
     <Lightbox
-      slides={images}
+      slides={slides}
       plugins={[ Inline, Captions, Zoom, Counter]}
       carousel={{ preload: 1, finite: true, padding: 0 }}
       inline={{ style: { width: "100%", maxWidth: "100vw", aspectRatio: "16 / 9" },}}

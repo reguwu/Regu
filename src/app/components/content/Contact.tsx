@@ -43,6 +43,7 @@ const Contact = () => {
           Email <span className={styles["required"]}>*</span>
         </label>
         <input
+          type="email"
           id="email"
           name="email"
           placeholder="Enter your email"
