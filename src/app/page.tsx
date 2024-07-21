@@ -34,13 +34,10 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
             <h1 className={styles["profile-name"]}>Reg Yu</h1>
             <h4 className={styles["profile-career"]}>Software Engineer</h4>
             <p>
-              Hello, I&apos;m Reg. I like to explore new technologies and tinker
-              with electronics. I am also passionate about art and video games.
-              Tangerines are one of my favorite fruits {"\u{1F34A}"}.
-
-              Hello, I&apos;m Reg. I like to explore new technologies and tinker
-              with electronics. I am also passionate about art and video games.
-              Tangerines are one of my favorite fruits {"\u{1F34A}"}.
+            Hello, I&apos;m Reg, I like to 💻 code and explore new technologies.
+            I think it's fun making awesome and unique things.
+            Some activities I occasionally like to do are drawing ✏️, fishing 🎣, or video games 🎮.
+            I also like peaceful 🎨 art and 🎧 music that makes me feel tranquil. 
             </p>
           </div>
           <Divider orientation="v" margin={[1.5, 1.5, 1.5, 1]}/>
