@@ -14,7 +14,7 @@ export const Toast = ({ title, description, open, setOpen }: Props) => {
   return (
     <div className={styles["container"]}>
       <RToast.Provider>
-        <RToast.Root className={styles["root"]} open={open} onOpenChange={setOpen}>
+        <RToast.Root className={styles["root"]} open={open} onOpenChange={(setOpen)}>
           <RToast.Title className={styles["title"]}>{title}</RToast.Title>
           <RToast.Description className={styles["description"]} >{description}</RToast.Description>
           <RToast.Close className={styles["close"]}>

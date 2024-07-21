@@ -2,14 +2,35 @@
 
 import styles from "@/styles/Contact.module.css";
 import Link from "next/link";
-import { ToastySubmitButton } from "@/components/ui/button/ToastySubmitButton";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { sendEmail } from "@/utils/email";
 import { EMAIL, getUrlByName } from "@/utils/constant";
+import { useFormState } from "react-dom";
+import { Toast } from "@/components/ui/toast";
+
+const initialState = {
+  toast: false,
+}
 
 const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [state, formAction] = useFormState(sendEmail, initialState);
+  const [open, setOpen] = useState(false);
+  const timerRef = useRef(0);
+
+  useEffect(() => {
+    if(state.toast == true) {
+      state.toast = false;
+      setOpen(false);
+      
+      window.clearTimeout(timerRef.current);
+      timerRef.current = window.setTimeout(() => {
+        setOpen(true);
+      }, 500);
+    }
+    
+  }, [state.toast]);
 
   const validate = () => {
     return email !== "" && message !== "";
@@ -17,12 +38,11 @@ const Contact = () => {
 
   return (
     <div className={styles["contact"]}>
-      <form action={sendEmail}>
+      <form action={formAction}>
         <label htmlFor="email">
           Email <span className={styles["required"]}>*</span>
         </label>
         <input
-          type="text"
           id="email"
           name="email"
           placeholder="Enter your email"
@@ -47,12 +67,16 @@ const Contact = () => {
         <div className={styles["footer"]}>
           <p>
             Or directly at{" "}
-            <Link href={`${getUrlByName("email")}`}>{EMAIL}</Link>
+            <Link href={`${getUrlByName("Email")}`}>{EMAIL}</Link>
           </p>
-          <ToastySubmitButton
-            title="Message Sent"
-            description="Thank you for your message. I'll get back to you as soon as possible."
-            disabled={!validate()}
+
+          <button className={styles["submit"]} type="submit" disabled={!validate()}>Submit</button>
+
+          <Toast 
+            title="Message Sent" 
+            description="Thank you for your message. I'll get back to you as soon as possible." 
+            open={open}
+            setOpen={setOpen}
           />
         </div>
       </form>

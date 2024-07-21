@@ -3,7 +3,7 @@
   flex-direction: column;
 }
 
-.contact > form > input[type=text], 
+.contact > form > input[id=email], 
 .contact > form > textarea {
   padding: 12px 20px;
   margin: 8px 0;
@@ -16,6 +16,22 @@
   max-width: 100%;
   min-width: 100%;
   min-height: 4rem;
+}
+
+.submit {
+  background-color: #4377e0;
+  color: white;
+  padding: 11px 18px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .footer {

@@ -1,4 +1,4 @@
-export const EMAIL: string = "regyu.dev@gmail.com";
+export const EMAIL: string = "regyu@regu.dev";
 
 export const SOCIAL_MEDIAS: Array<{name: string, url: string}> = [
   {name: "LinkedIn", url: "https://linkedin.com/in/reg-yu"},
