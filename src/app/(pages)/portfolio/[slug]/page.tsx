@@ -6,7 +6,6 @@ import { getMdxContent } from "@/utils/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { MdxComponents } from "@/components/content/mdx";
 import styles from "@styles/PortfolioPage.module.css";
-import SkillList from "@/components/content/SkillList";
 import { formatDateString } from "@/utils/date";
 import { LightboxWrapper } from "@/components/ui/navigation/lightbox";
 import { CATEGORY_COLOR } from "@/utils/constant";
@@ -14,6 +13,7 @@ import Link from "next/link";
 import Icon from "@/components/content/Icon";
 import { Divider } from "@/components/ui/divider";
 import { Slide } from "yet-another-react-lightbox";
+import VerboseSkillList from "@/components/content/VerboseSkillList";
 
 export const dynamicParams = false;
 export async function generateStaticParams() {
@@ -61,7 +61,7 @@ const PortfolioPage = async ({ params }: { params: { slug: string } }) => {
           </div>
         </div>
 
-        <SkillList iconNames={portfolio.metadata.techStack} verbose/>
+        <VerboseSkillList iconNames={portfolio.metadata.techStack}/>
         <Divider text="Gallery" margin={[2.5, 0, 1.5, 0]}/>
         <LightboxWrapper slides={portfolio.metadata.gallery as Slide[]}/>
 

@@ -1,3 +1,5 @@
+@value medium-screen-max-width from './constant.css';
+
 .article {
   display: flex;
   flex-direction: column;
@@ -9,19 +11,15 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
   padding-bottom: 0.5rem;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: medium-screen-max-width) {
   .header-container {
-    display: flex;
     flex-direction: column;
     align-content: start;
     flex-wrap: wrap;
-    align-items: flex-start;
-    width: 100%;
   }
 }
 
@@ -49,9 +47,15 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  align-self: flex-end;
+  align-self: end;
   flex-wrap: wrap;
   padding-top: 0.5rem;
+}
+
+@media screen and (max-width: medium-screen-max-width) {
+  .links-container {
+    align-self: start;
+  }
 }
 
 .links-container > div > a {

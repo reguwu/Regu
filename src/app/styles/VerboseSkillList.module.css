@@ -1,0 +1,23 @@
+.verbose-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.50rem;
+  flex-wrap: wrap;
+}
+ 
+.verbose-icons > div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.35rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(46, 46, 46, 1);
+  border: 1px solid rgba(46, 46, 46);
+}
+
+.verbose-icons > div > span {
+ font-weight: 500;
+ font-size: 0.75rem;
+ white-space: nowrap;
+}
