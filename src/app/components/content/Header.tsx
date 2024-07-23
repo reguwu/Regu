@@ -14,7 +14,7 @@ const Header: React.FC = () => {
       <div className={styles["page-navbar-container"]}>
         <nav className={styles["page-navbar"]}>
             <Link href={getHref("/", "#home")} className={styles["logo"]}>
-              <Image className={styles["logo-image"]} src="/logo.svg" alt="Logo" width={0} height={0} priority={true}/>
+              <Image className={styles["logo-image"]} src="/images/logo.svg" alt="Logo" width={0} height={0} priority={true}/>
             </Link>
             <Link href={getHref("/", "#home")} className={styles["page-navbar-link"]}>Home</Link>
             <Link href={getHref("/", "#portfolio")} className={styles["page-navbar-link"]}>Portfolio</Link>

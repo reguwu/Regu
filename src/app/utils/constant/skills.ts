@@ -34,4 +34,8 @@ export const SKILLS: string[] = [
   "unity",
   "maya",
   "inkscape",
+  "radix ui",
+  "framer motion",
+  "cloudflare",
+  "vercel",
 ];
