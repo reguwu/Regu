@@ -5,6 +5,7 @@ export type Portfolio = {
     link: {
         github: string
         live: string
+        demo: string
     };
     description: string
     category: CategoryTypes
