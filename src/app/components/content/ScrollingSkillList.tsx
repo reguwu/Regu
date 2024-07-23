@@ -15,7 +15,7 @@ interface Props {
 const ScrollingSkillList: React.FC<Props> = ({ speed }) => {
   const [ref, inView] = useInView({ threshold: 0.1 })
   const icons: string[][] = [];
-  const iconChunks = sliceIntoChunks(SKILLS, 12);
+  const iconChunks = sliceIntoChunks(SKILLS, 13);
   iconChunks.map((chunk) => icons.push(chunk.concat(chunk)));
 
   return (
