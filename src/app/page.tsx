@@ -35,7 +35,7 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
             <h4 className={styles["profile-career"]}>Software Engineer</h4>
             <p>
             Hello, I&apos;m Reg, I like to 💻 code and explore new technologies.
-            I think it's fun making awesome and unique things.
+            I think it&apos;s fun making awesome and unique things.
             Some activities I occasionally like to do are drawing ✏️, fishing 🎣, or video games 🎮.
             I also like peaceful 🎨 art and 🎧 music that makes me feel tranquil. 
             </p>
