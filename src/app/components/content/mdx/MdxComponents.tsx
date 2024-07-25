@@ -2,8 +2,9 @@ import { MDXComponents } from "mdx/types"
 import Image, { ImageProps } from "next/image"
 
 export const MdxComponents: MDXComponents = {
-  p: ({ children }: any) => <p style={{ color: "unset" }}>{children}</p>,
-  ul: ({ children }: any) => <ul style={{ paddingInlineStart: 30 }}>{children}</ul>,
+  p: ({ children }: any) => <p style={{ color: "unset", lineHeight: 1.5 }}>{children}</p>,
+  ul: ({ children }: any) => <ul style={{ paddingInlineStart: 30, lineHeight: 1.5 }}>{children}</ul>,
+  li: ({ children }: any) => <li style={{ margin: "1rem 0" }}>{children}</li>,
   Image: (props: ImageProps) => (
     <Image
       width={0}
