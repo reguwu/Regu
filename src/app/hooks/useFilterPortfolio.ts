@@ -1,8 +1,8 @@
 import { Portfolio } from "@/types";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { filterPortfolio } from "@/utils/portfolio/filterPortfolio";
-import { useSkipFirstEffect } from "@/hooks/useSkipFirstEffect";
+
 
 export const useFilterPortfolio = (portfolios: Portfolio[]) => {
   const searchParams = useSearchParams();
@@ -17,7 +17,7 @@ export const useFilterPortfolio = (portfolios: Portfolio[]) => {
     return filteredPortfolios;
   };
 
-  useSkipFirstEffect(() => {
+  useEffect(() => {
     setFilteredPortfolios(getFilteredPortfolio());
   }, [searchParams.get("query")]);
 

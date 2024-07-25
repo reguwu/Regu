@@ -6,9 +6,8 @@ import { Search, Pagination } from "@/components/ui/navigation";
 import { Portfolio as PortfolioType } from "@/types";
 import { useFilterPortfolio } from "@/hooks/useFilterPortfolio";
 import { sliceIntoChunks } from "@/utils/portfolio";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { useSkipFirstEffect } from "@/hooks";
 import { PORTFOLIO_PER_PAGE } from "@/utils/constant/portfolio";
 import { variants } from "@/utils/animation";
 import { LazyMotion, domAnimation, m, AnimatePresence } from "framer-motion"
@@ -31,11 +30,11 @@ const PortfolioList: React.FC<Props> = ({
   const pageIndex = (updatedCurrentPage <= updatedPagedPortfolios.length && updatedCurrentPage > 0)
   ? updatedCurrentPage - 1 : 0;
 
-  useSkipFirstEffect(() => {
+  useEffect(() => {
     setPagedPortfolios(sliceIntoChunks(filteredPortfolios, PORTFOLIO_PER_PAGE, true));
   }, [filteredPortfolios]);
 
-  useSkipFirstEffect(() => {
+  useEffect(() => {
     setCurrentPage(Number(searchParams.get("page")) || 1);
   }, [searchParams.get("page")]);
 

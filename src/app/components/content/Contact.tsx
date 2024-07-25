@@ -30,7 +30,7 @@ const Contact = () => {
       }, 500);
     }
     
-  }, [state.toast]);
+  }, [state]);
 
   const validate = () => {
     return email !== "" && message !== "";
