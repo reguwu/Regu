@@ -2,6 +2,7 @@
   /* --yarl__color_backdrop: rgba(0, 0, 0, 0); */
   border-radius: 10px;
   overflow: hidden;
+  touch-action: none;
 }
 
 .yarl__slide_captions_container {
