@@ -29,21 +29,23 @@ A program to rectify or transform an image that contains a quadrilateral object 
 
 ## Relevant Line Identification
 
-The 2D hough is 180 degrees rows and 2 ∗ d columns, where d is the diagonal on the polar
-coordinate. To select the relevant lines, I find the set of local maxima with a threshold, and
-also set the Theta, Rho, and Length thresholds to group parallel lines into two groups.
+The 2D Hough transform has 180 rows (for degrees) and 2 * d columns, where d is the diagonal on the polar
+coordinate system. To select the relevant lines, I identify the set of local maxima with a threshold and
+also set the theta, rho, and length thresholds to group parallel lines into two categories.
 
-The local maxima threshold is 0.20*(maximum value on the hough histogram). All locations
-lower than the threshold is ignored when finding local maximas.
+The **local maxima** threshold is 0.20 * (maximum value in the Hough histogram). All locations below this
+threshold are ignored when finding local maxima.
 
-The Theta threshold is 45 degrees. Two lines are parallel if the absolute value of the difference of
-their angles on the 2D hough is less than this.
+The **theta** threshold is 45 degrees. Two lines are considered parallel if the absolute value of the
+difference in their angles on the 2D Hough transform is less than this threshold.
 
-The Rho threshold is d/4. It is used to check that the Rho difference between 2 location on the
-2D hough is greater than the Rho threshold. If two lines have similar angle(Theta) and Rho then they
-would be parallel lines in the same cluster on the 2D hough; this means parallel lines that
-are very close to each other. If two lines have similar angle and different Rho, then they would
-be parallel lines from different clusters on the 2D hough; this means two lines that are parallel, but far apart.
+The **rho** threshold is d/4. It is used to check that the difference in rho between two locations on
+the 2D Hough transform is greater than this threshold. If two lines have similar angles (theta)
+and rho values, they are considered parallel lines in the same cluster on the 2D Hough transform,
+meaning they are very close to each other. If two lines have similar angles but different rho values,
+they are considered parallel lines from different clusters on the 2D Hough transform, indicating they are far apart.
 
-The length threshold is 0.2*(average length of the two parallel lines). Two lines are parallel if their
-length is similar in size, and also meet the requirement of the Theta and Rho thresholds.
+The **length** threshold is 0.2 * (average length of the two parallel lines). Two lines are considered
+parallel if their lengths are similar in size and they also meet the theta and rho threshold requirements.
+
+
