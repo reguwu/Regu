@@ -6,7 +6,7 @@ import { join } from "path";
 import { getMdxContent } from "@/utils/mdx";
 import { filterPortfolio, sliceIntoChunks } from "@/utils/portfolio";
 import { PORTFOLIO_PER_PAGE } from "@/utils/constant/portfolio";
-import ScrollingSkillIconList from "@/components/content/ScrollingSkillList";
+import ScrollingSkillList from "@/components/content/ScrollingSkillList";
 import Contact from "@/components/content/Contact";
 import { Divider } from "@/components/ui/divider";
 import SocialMediaList from "@/components/content/SocialMediaList";
@@ -45,7 +45,7 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
         </div>
  
         <Divider text="Skills" orientation="h" margin={[3, 0, 2, 0]}/>
-        <ScrollingSkillIconList speed={120}/>
+        <ScrollingSkillList speed={120}/>
       </section>
 
       <section id="portfolio" className={styles["portfolio"]}>
