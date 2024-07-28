@@ -7,8 +7,8 @@
 }
 
 .icons > span {
+  display: flex;
+  align-items: end;
   font-size: small;
-  align-content: end;
-  -webkit-align-content: end;
   font-weight: bold;
 }

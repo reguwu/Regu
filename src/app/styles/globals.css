@@ -9,17 +9,21 @@ html, body {
   scroll-padding-top: 4rem;
 }
 
-body {
+body::before {
+  content: '';
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
   background-image: url("/images/background.png");
   background-repeat: no-repeat;
   background-position: top left;
-  background-attachment: fixed;
-  -webkit-background-attachment: fixed;
+  /* background-attachment: fixed; */
+  z-index: -1;
 }
 
 @media screen and (max-width: 450px) {
-  body {
-    background-position-x: -15vw;
+  body::before {
+    background-position-x: -50vw;
   }
 }
 
