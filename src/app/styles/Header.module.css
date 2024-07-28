@@ -29,16 +29,6 @@
     width: 100%;
 }
 
-@media screen and (max-width: medium-screen-max-width) {
-    .page-navbar {
-        justify-content: end;
-    }
-
-    .page-navbar-link {
-        display: none;
-    }
-}
-
 .page-navbar-link {
     display: flex;
     align-items: center;
@@ -50,6 +40,16 @@
 
 .page-navbar-link:hover {
     background: linear-gradient(#38518a 0%, rgb(56, 81, 138) 60%, rgb(56, 81, 138, 0) 100%);
+}
+
+@media screen and (max-width: medium-screen-max-width) {
+    .page-navbar {
+        justify-content: end;
+    }
+
+    .page-navbar-link {
+        display: none;
+    }
 }
 
 .logo {
