@@ -41,7 +41,7 @@
 
 .page-navbar-link {
     align-content: center;
-    -webkit-align-content: center;
+    -webkit-box-align: center;
     padding: 0 0.5rem;
     height: 100%;
     color: white;
