@@ -25,8 +25,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="1.4022026"
-     inkscape:cx="69.890044"
-     inkscape:cy="122.30758"
+     inkscape:cx="69.890043"
+     inkscape:cy="123.02074"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
@@ -110,17 +110,11 @@
        cx="105.26424"
        cy="89.559074"
        r="26.729219" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.55865px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#ededed;fill-opacity:1;stroke-width:0.320949"
-       x="96.132988"
-       y="120.73077"
+    <path
+       style="font-size:42.7932px;font-family:Magneto;-inkscape-font-specification:'Magneto, Normal';fill:#ededed;stroke-width:0.320949"
+       d="m 132.92929,117.38755 q -0.0836,1.56713 -1.46266,2.50741 -1.2537,0.83581 -2.90442,0.83581 h -8.04462 q -1.65071,0 -2.50741,-0.8776 -0.56417,-0.56417 -1.42087,-2.46562 l -4.11634,-9.11027 q 0.77312,-0.14627 3.57307,-1.19103 2.71636,-1.00296 3.4059,-1.37907 4.15813,-2.1522 4.15813,-5.39094 0,-3.719335 -5.26557,-3.719335 H 97.031478 l 3.259642,-5.26557 h 21.04138 q 11.34605,0 11.34605,7.229711 0,6.122274 -11.80574,10.698304 l 3.76112,8.1282 z m -17.48921,-18.095175 -7.62672,21.438395 h -7.52224 l 7.56403,-21.438395 z"
        id="text2"
-       inkscape:label="text1"><tspan
-         sodipodi:role="line"
-         id="tspan2"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.7932px;font-family:Magneto;-inkscape-font-specification:'Magneto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ededed;fill-opacity:1;stroke-width:0.320949"
-         x="96.132988"
-         y="120.73077">R</tspan></text>
+       inkscape:label="text1"
+       aria-label="R" />
   </g>
 </svg>
