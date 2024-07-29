@@ -11,7 +11,7 @@ export const sendEmail = async (prevState: any, formData: FormData) => {
   await resend.emails.send({
     from: EMAIL,
     to: EMAIL,
-    reply_to: formData.get("email")?.toString().toString(),
+    reply_to: formData.get("email")?.toString(),
     subject: `Email Via Resend: ${formData.get("email")?.toString()}`,
     react: <Email msg={formData.get("message")?.toString()} />,
   })
@@ -20,7 +20,7 @@ export const sendEmail = async (prevState: any, formData: FormData) => {
     toast = data.data ? true : false;
 
     //for testing without actually sending email
-    // toast = formData.get("email")?.toString().toString() === "aa" ? true : false;
+    // toast = formData.get("email")?.toString() === "aa" ? true : false;
   })
 
   return {
