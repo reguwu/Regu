@@ -2,7 +2,7 @@ export const EMAIL: string = "regyu@regu.dev";
 
 export const SOCIAL_MEDIAS: Array<{name: string, url: string}> = [
   {name: "LinkedIn", url: "https://linkedin.com/in/reg-yu"},
-  {name: "GitHub", url: "https://github.com/rgrs412"},
+  {name: "GitHub", url: "https://github.com/reguwu"},
   {name: "Discord", url: "https://discord.gg/dcdH99uyqh"},
   {name: "Email", url: `mailto:${EMAIL}`},
   {name: "Resume", url: "/Reg_Yu_Resume.pdf"},
