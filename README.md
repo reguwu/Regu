@@ -14,6 +14,7 @@ RESEND_API_KEY=
 ```
 
 Install dependencies
+
 ```bash
 npm install
 ```
