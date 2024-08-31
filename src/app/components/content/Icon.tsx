@@ -50,7 +50,7 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
   switch (name) {
     case "java":
       return <Image src="/images/icons/java.svg" 
-      alt="" width={size} height={size}
+      alt="" width={size} height={size} priority
       style={{backgroundColor: "white", borderRadius: "15%"}} />;
     case "springboot":
       return <SiSpringboot color="#71b544" size={size} />;
@@ -64,7 +64,7 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
     case "mdx":
       return (
         <Image src={`/images/icons/mdx.svg`}
-          alt="" width={size} height={size}
+          alt="" width={size} height={size} priority
           style={{ backgroundColor: "black", borderRadius: "15%" }}/>
       );
     case "flask":
@@ -72,7 +72,7 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
     case "aws":
       return (
         <Image src={`/images/icons/aws.svg`}
-          alt="" width={size} height={size}
+          alt="" width={size} height={size} priority
           style={{ backgroundColor: "white", borderRadius: "15%" }}/>
       );
     case "twilio":
@@ -95,7 +95,7 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
     case "maven":
       return (
         <Image src={`/images/icons/maven.svg`}
-          alt="" width={size} height={size}
+          alt="" width={size} height={size} priority
           style={{ backgroundColor: "white", borderRadius: "15%" }}/>
       );
     case "docker":
@@ -105,7 +105,7 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
     case "oauth":
       return (
         <Image src={`/images/icons/oauth.svg`}
-          alt="" width={size} height={size}
+          alt="" width={size} height={size} priority
           style={{ backgroundColor: "white", borderRadius: "15%" }}/>
       );
     case "linkedin":
@@ -181,7 +181,7 @@ const Icon = ({ name, size }: { name: string; size: number }) => {
     default:
       return (
         <Image src={`/images/icons/${name}.svg`}
-          alt="" width={size} height={size} />
+          alt="" width={size} height={size} priority />
       );
   }
 };
