@@ -37,7 +37,7 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
             Hello, I&apos;m Reg, I like to 💻 code and explore new technologies.
             I think it&apos;s fun making awesome and unique things.
             Some activities I occasionally like to do are drawing ✏️, fishing 🎣, or video games 🎮.
-            I also like peaceful 🎨 art and 🎧 music that makes me feel tranquil. 
+            I also enjoy peaceful art 🎨 and music 🎧 that makes me feel tranquil. 
             </p>
           </div>
           <Divider orientation="v" margin={[1.5, 1.5, 1.5, 1]}/>
