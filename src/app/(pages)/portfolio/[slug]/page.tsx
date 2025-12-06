@@ -32,8 +32,7 @@ async function fetchPortfolioBySlug(slug: string) {
   return portfolio;
 }
 
-const PortfolioPage = async (props: { params: Promise<{ slug: string }> }) => {
-  const params = await props.params;
+const PortfolioPage = async ({ params }: { params: { slug: string } }) => {
   const portfolio = await fetchPortfolioBySlug(params.slug);
 
   return (

@@ -19,8 +19,7 @@ async function fetchPortfolio() {
   return portfolios;
 }
 
-const HomePage = async (props: { searchParams: Promise<SearchParams> }) => {
-  const searchParams = await props.searchParams;
+const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
   const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 1;
   const portfolios = await fetchPortfolio();
