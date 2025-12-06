@@ -10,7 +10,6 @@ import ScrollingSkillList from "@/components/content/ScrollingSkillList";
 import Contact from "@/components/content/Contact";
 import { Divider } from "@/components/ui/divider";
 import SocialMediaList from "@/components/content/SocialMediaList";
-import { Suspense } from "react";
 
 async function fetchPortfolio() {
   const path = join(process.cwd(), "src/app/data/portfolio");
@@ -51,13 +50,11 @@ const HomePage = async ({ searchParams }: { searchParams: SearchParams }) => {
 
       <section id="portfolio" className={styles["portfolio"]}>
         <h1>Portfolio</h1>
-        <Suspense>
-          <PorfolioList
-            portfolios={portfolios}
-            pagedPortfolios={pagedPortfolios}
-            currentPage={currentPage}
-          />
-        </Suspense>
+        <PorfolioList
+          portfolios={portfolios}
+          pagedPortfolios={pagedPortfolios}
+          currentPage={currentPage}
+        />
       </section>
 
       <section id="contact" className={styles["contact"]}>
