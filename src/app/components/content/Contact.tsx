@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { sendEmail } from "@/utils/email";
 import { EMAIL, getUrlByName } from "@/utils/constant";
-import { useActionState } from "react";
+import { useFormState } from "react-dom";
 import { Toast } from "@/components/ui/toast";
 
 const initialState = {
@@ -15,7 +15,7 @@ const initialState = {
 const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [state, formAction] = useActionState(sendEmail, initialState);
+  const [state, formAction] = useFormState(sendEmail, initialState);
   const [open, setOpen] = useState(false);
   const timerRef = useRef(0);
 
